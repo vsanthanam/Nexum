@@ -68,6 +68,12 @@ static os_log_t nx_network_log;
     
 }
 
+- (void)dealloc {
+    
+    [self stopListening];
+    
+}
+
 #pragma mark - Property Access Methods
 
 - (NXNetworkReachabilityStatus)reachabilityStatus {

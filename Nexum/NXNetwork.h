@@ -81,17 +81,59 @@ typedef void (^NXNetworkReachabilityStatusChangedHandler)(NXNetwork * _Nonnull n
  The block to be executed when the network object's reachability status changes
  */
 @property (NS_NONATOMIC_IOSONLY, copy, nullable) NXNetworkReachabilityStatusChangedHandler reachabilityStatusChangedHandler;
+
+/**
+ The 'listening' status of the network object. If the network objet is listening for changes, notifications will be sent, blocks will be executed, and the delegate object will be informed when the network object's reachability status changes.
+ */
 @property (NS_NONATOMIC_IOSONLY, readonly, getter=isListening) BOOL listening;
+
+/**
+ The current reachability status of the network object
+ */
 @property (NS_NONATOMIC_IOSONLY, readonly) NXNetworkReachabilityStatus reachabilityStatus;
 
+/**
+ The generic shared network object. You can use this singleton if you don't want to manage ownership of the network object directly, and you can interact with and observe changes to its reachabilty status via notifications, blocks, its delegate object.
+
+ @return The shared network object
+ */
 + (nullable instancetype)sharedNetwork;
 
+/**
+ Create a generic network object, observing changes to internet reachability
+
+ @return The network object
+ */
 + (nullable instancetype)network;
 
+/**
+ Create network object that observes changes to the reachability of a single hostname and only that hostname
+
+ @param hostName The host name
+ @return The network object.
+ */
 - (nullable instancetype)initWithHostName:(nonnull NSString *)hostName NS_DESIGNATED_INITIALIZER;
+
+/**
+ Create network object that observes changes to the reachability of a single IP address and only that IP address
+ 
+ @param hostName The IP address
+ @return The network object.
+ */
 - (nullable instancetype)initWithHostAddress:(nonnull const struct sockaddr *)hostAddress NS_DESIGNATED_INITIALIZER;
 
+/**
+ Begin listening to changes in reachability
+
+ @return YES if network object began listening, otherwise NO.
+ */
 - (BOOL)startListening;
+
+/**
+ Stop listening to changes in reachability
+
+ @return YES if network object stopped listening, otherwose NO.
+ */
 - (BOOL)stopListening;
 
 @end
