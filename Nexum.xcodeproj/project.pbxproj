@@ -36,6 +36,8 @@
 		072FCAE12061EEF1007F9030 /* Nexum.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 072FCADE2061EEF1007F9030 /* Nexum.h */; };
 		072FCAE72061EF0B007F9030 /* NXNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCAE62061EF0B007F9030 /* NXNetwork.m */; };
 		072FCAE92061F7EC007F9030 /* NXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 072FCAE52061EF0B007F9030 /* NXNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		072FCAFA20620978007F9030 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAF920620978007F9030 /* CoreFoundation.framework */; };
+		072FCAFC2062097F007F9030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAFB2062097F007F9030 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		072FCAE52061EF0B007F9030 /* NXNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXNetwork.h; sourceTree = "<group>"; };
 		072FCAE62061EF0B007F9030 /* NXNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXNetwork.m; sourceTree = "<group>"; };
 		072FCAEA2061F873007F9030 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		072FCAF920620978007F9030 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		072FCAFB2062097F007F9030 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072FCAFC2062097F007F9030 /* SystemConfiguration.framework in Frameworks */,
+				072FCAFA20620978007F9030 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 			children = (
 				072FCADD2061EEF1007F9030 /* Nexum */,
 				072FCADC2061EEF1007F9030 /* Products */,
+				072FCAF820620978007F9030 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,15 @@
 				072FCAE62061EF0B007F9030 /* NXNetwork.m */,
 			);
 			path = Nexum;
+			sourceTree = "<group>";
+		};
+		072FCAF820620978007F9030 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				072FCAFB2062097F007F9030 /* SystemConfiguration.framework */,
+				072FCAF920620978007F9030 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-fembed-bitcode-marker";
@@ -367,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "-fembed-bitcode-marker";
 				OTHER_LDFLAGS = "-ObjC";
