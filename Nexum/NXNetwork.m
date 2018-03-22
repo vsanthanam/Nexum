@@ -10,6 +10,9 @@
 
 #import "NXNetwork.h"
 
+#define log_subsystem   "com.varunsanthanam.Nexum"
+#define log_category    "NXNetwork"
+
 NSString * const NXNetworkReachabilityStatusChanged = @"kNXNetworkReachabilityStatusChanged";
 
 @implementation NXNetwork {
@@ -27,7 +30,7 @@ static os_log_t nx_network_log;
 
 + (void)initialize {
     
-    nx_network_log = os_log_create("com.varunsanthanam.Nexum", "NXNetwork");
+    nx_network_log = os_log_create(log_subsystem, log_category);
     
 }
 
@@ -242,7 +245,9 @@ void log_flags(SCNetworkReachabilityFlags flags, const char *comment) {
 
 static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info) {
  
+#ifdef DEBUG
     log_flags(flags, "Reachability Callback");
+#endif
     NXNetwork *network = (__bridge NXNetwork *)info;
     [network _reachabilityStatusChanged];
     

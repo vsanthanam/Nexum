@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Classes  Reference</title>
+    <title>Setup  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Classes  Reference"></a>
+    <a title="Setup  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -34,7 +34,7 @@
             <a href="index.html">Nexum Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          Classes  Reference
+          Setup  Reference
         </p>
       </div>
     </div>
@@ -43,43 +43,40 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>Classes</h1>
-              <p>The following classes are available globally.</p>
+              
+              <h1 id='nexum-setup' class='heading'>Nexum Setup</h1>
+<h2 id='using-the-static-framework' class='heading'>Using the Static Framework</h2>
 
-            </section>
-            <section class="section task-group-section">
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)NXNetwork"></a>
-                      <a name="//apple_ref/objc/Class/NXNetwork" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NXNetwork">NXNetwork</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>NXNetwork is a long-use object used to listen to and handle changes in a device&rsquo;s network reachability. You should create an instance of a NXNetwork object and retain a strong reference to it in memory, and react to changes using by observing the <code><a href="Constants.html#/c:@NXNetworkReachabilityStatusChanged">NXNetworkReachabilityStatusChanged</a></code> notification, a block you can assign to nexum instance&rsquo;s <code>reachabilityStatusChangedHandler</code> property, or an object that conforms to <code><a href="Protocols/NXNetworkDelegate.html">NXNetworkDelegate</a></code> protocol.</p>
+<ol>
+<li>Open <code>Nexum.xcodeproj</code></li>
+<li>Build the  <code>Framework</code> target for  <code>Generic iOS Device</code></li>
+<li>Navigate to the <code>{Repo}/Release</code> directory and copy <code>Nexum.framework</code> into your project directory</li>
+<li>Go to your App target&rsquo;s settings, and go to the <code>General</code> tab<code>General</code></li>
+<li>Click <q>+</q> under the <code>Linked Frameworks and Libraries</code></li>
+<li>Select <code>Add other...</code></li>
+<li>Choose <code>Nexum.framework</code></li>
+<li>Add <code>@import Nexum;</code> in the relevent classes in your app</li>
+</ol>
+<h2 id='using-the-source-directly' class='heading'>Using the Source Directly</h2>
 
-                          <a href="Classes/NXNetwork.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NXNetwork</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+<ol>
+<li>Navigation to <code>{Repo}/Nexum/</code></li>
+<li>Copy <code>NXNetwork.h</code> and <code>NXNetwork.m</code> into your project directory</li>
+<li>Open your Xcode project and right-click in the Navigator</li>
+<li>Choose `Add files to <q>{AppName}&hellip;</q></li>
+<li>Select <code>NXNetwork.h</code> and <code>NXNetwork.m</code>. Make sure <code>.m</code> file is linked to your target.</li>
+<li>Add <code>#import &#39;NXNetwork.h&#39;</code> in the relevent classes in your app</li>
+</ol>
+<h2 id='building-the-documentaiton' class='heading'>Building The Documentaiton</h2>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+<ol>
+<li>Install <a href="https://github.com/realm/jazzy">Jazzy</a></li>
+<li>Delete the <code>{Repo}/Release</code> directory if it exists</li>
+<li>Open <code>Nexum.xcodeproj</code></li>
+<li>Build the  <code>Documentation</code> target for  <code>Generic iOS Device</code></li>
+</ol>
+<h2 id='example-app' class='heading'>Example App</h2>
+
             </section>
           </section>
         </article>

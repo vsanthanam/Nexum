@@ -47,6 +47,7 @@
 		072FCB1D20620A1E007F9030 /* NexumExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB1C20620A1E007F9030 /* NexumExampleTests.m */; };
 		072FCB2820620A1E007F9030 /* NexumExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB2720620A1E007F9030 /* NexumExampleUITests.m */; };
 		072FCB3320620A46007F9030 /* NXNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCAE62061EF0B007F9030 /* NXNetwork.m */; };
+		076D7F7B2063F319004AC894 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 076D7F7A2063F319004AC894 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,11 @@
 		072FCB2320620A1E007F9030 /* NexumExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexumExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		072FCB2720620A1E007F9030 /* NexumExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NexumExampleUITests.m; sourceTree = "<group>"; };
 		072FCB2920620A1E007F9030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		076D7F7920634045004AC894 /* Example - Basic Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Example - Basic Reachability.md"; sourceTree = "<group>"; };
+		076D7F7A2063F319004AC894 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		076D7F7D2063F3B5004AC894 /* Example - Multiple Hosts.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Example - Multiple Hosts.md"; sourceTree = "<group>"; };
+		076D7F832063FA28004AC894 /* Designing For Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Designing For Reachability.md"; sourceTree = "<group>"; };
+		076D7F842063FADE004AC894 /* Setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Setup.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,8 @@
 		072FCAD02061EEE5007F9030 = {
 			isa = PBXGroup;
 			children = (
+				076D7F7A2063F319004AC894 /* README.md */,
+				076D7F7820634005004AC894 /* Guides */,
 				072FCADD2061EEF1007F9030 /* Nexum */,
 				072FCB0220620A1D007F9030 /* NexumExample */,
 				072FCB1B20620A1E007F9030 /* NexumExampleTests */,
@@ -221,6 +229,17 @@
 				072FCB2920620A1E007F9030 /* Info.plist */,
 			);
 			path = NexumExampleUITests;
+			sourceTree = "<group>";
+		};
+		076D7F7820634005004AC894 /* Guides */ = {
+			isa = PBXGroup;
+			children = (
+				076D7F7920634045004AC894 /* Example - Basic Reachability.md */,
+				076D7F7D2063F3B5004AC894 /* Example - Multiple Hosts.md */,
+				076D7F832063FA28004AC894 /* Designing For Reachability.md */,
+				076D7F842063FADE004AC894 /* Setup.md */,
+			);
+			path = Guides;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +394,7 @@
 			files = (
 				072FCB1020620A1E007F9030 /* LaunchScreen.storyboard in Resources */,
 				072FCB0D20620A1E007F9030 /* Assets.xcassets in Resources */,
+				076D7F7B2063F319004AC894 /* README.md in Resources */,
 				072FCB0B20620A1E007F9030 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +456,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "jazzy --objc --clean --author 'Varun Santhanam' --author_url 'https://www.vsanthanam.com' --github_url 'https://github.com/vsanthanam/Nexum' --umbrella-header Nexum/Nexum.h --framework-root . --module Nexum --sdk iphonesimulator --hide-declarations swift --output \"${PROJECT_DIR}/Documentation\" --theme \"${PROJECT_DIR}/JazzyTheme\"";
+			shellScript = "jazzy --objc --clean --author 'Varun Santhanam' --author_url 'https://www.vsanthanam.com' --github_url 'https://github.com/vsanthanam/Nexum' --umbrella-header Nexum/Nexum.h --framework-root . --module Nexum --sdk iphonesimulator --hide-declarations swift --output \"${PROJECT_DIR}/Documentation\" --documentation=\"Guides/*.md\" --theme \"${PROJECT_DIR}/JazzyTheme\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

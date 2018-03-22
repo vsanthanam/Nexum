@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Classes  Reference</title>
+    <title>Example - Basic Reachability  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Classes  Reference"></a>
+    <a title="Example - Basic Reachability  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -34,7 +34,7 @@
             <a href="index.html">Nexum Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          Classes  Reference
+          Example - Basic Reachability  Reference
         </p>
       </div>
     </div>
@@ -43,43 +43,57 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>Classes</h1>
-              <p>The following classes are available globally.</p>
+              
+              <h1 id='basic-reachability' class='heading'>Basic Reachability</h1>
 
-            </section>
-            <section class="section task-group-section">
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)NXNetwork"></a>
-                      <a name="//apple_ref/objc/Class/NXNetwork" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NXNetwork">NXNetwork</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>NXNetwork is a long-use object used to listen to and handle changes in a device&rsquo;s network reachability. You should create an instance of a NXNetwork object and retain a strong reference to it in memory, and react to changes using by observing the <code><a href="Constants.html#/c:@NXNetworkReachabilityStatusChanged">NXNetworkReachabilityStatusChanged</a></code> notification, a block you can assign to nexum instance&rsquo;s <code>reachabilityStatusChangedHandler</code> property, or an object that conforms to <code><a href="Protocols/NXNetworkDelegate.html">NXNetworkDelegate</a></code> protocol.</p>
+<p>You can add reachability to your app with just a few lines of code. This implemementation provides you with minimal control, but will have you up in running in a matter of minutes.</p>
+<h2 id='observe-notification' class='heading'>Observe Notification</h2>
 
-                          <a href="Classes/NXNetwork.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NXNetwork</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+<p>First, add the following to your app delegate&rsquo;s  <code>-application:didFinishLaunchingWithOptions:</code> method</p>
+<pre class="highlight plaintext"><code>
+#import "AppDelegate.h"
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+@import Nexum;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    // Observe reachability change notification
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_handleReachabilityChange:)
+                                                 name:NXNetworkReachabilityStatusChanged
+                                               object:nil];
+
+    // Listen for reachability changes
+    [[NXNetwork sharedNetwork] startListening];
+
+    return YES;
+
+}
+
+</code></pre>
+<h2 id='handle-notification' class='heading'>Handle Notification</h2>
+
+<p>then, you an write a method to handle changes when the notification is fired, like so:</p>
+<pre class="highlight plaintext"><code>- (void)_handleReachabilityChange:(NSNotification *)notif {
+
+    // Don't forget to update the UI on the main thread or you'll be a sad boi
+
+    if ([NXNetwork sharedNetwork].reachabilityStatus == NXNetworkReachabilityStatusNotReachable) {
+
+        NSLog(@"Device has no internet connection. Do Something");
+
+    } else {
+
+
+        NSLog(@"Device has an internet connection. Do Something");
+
+    }
+
+}
+</code></pre>
+
+<p>This is the easiest way to get Nexum up and running, but if you&rsquo;d like more control over what reachability changes you are listening for and how they are handled, I recommend instantiating and managing your own instance of NXNetwork rather than using the singleton.</p>
+
             </section>
           </section>
         </article>
