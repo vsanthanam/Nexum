@@ -1,4 +1,4 @@
-#  Nexum Setup
+#  Project Setup
 
 ## Using the Static Framework
 

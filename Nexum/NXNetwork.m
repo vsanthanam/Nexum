@@ -10,7 +10,7 @@
 
 #import "NXNetwork.h"
 
-#define log_subsystem   "com.varunsanthanam.Nexum"
+#define log_subsystem   "Nexum"
 #define log_category    "NXNetwork"
 
 NSString * const NXNetworkReachabilityStatusChanged = @"kNXNetworkReachabilityStatusChanged";
@@ -71,9 +71,24 @@ static os_log_t nx_network_log;
     
 }
 
+- (NSString *)description {
+    
+    SCNetworkReachabilityFlags flags;
+    
+    return [NSString stringWithFormat:@"<%@: %p (%@)>", NSStringFromClass([self class]), self, string_from_flags(SCNetworkReachabilityGetFlags(_reachability, &flags))];
+    
+}
+
 - (void)dealloc {
     
     [self stopListening];
+    
+    if (_reachability) {
+        
+        CFRelease(_reachability);
+        _reachability = nil;
+        
+    }
     
 }
 
@@ -224,30 +239,27 @@ NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
     
 }
 
-void log_flags(SCNetworkReachabilityFlags flags, const char *comment) {
+NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
     
-    NSString *string = [NSString stringWithFormat:@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
-                        (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
-                        (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
-                        
-                        (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',
-                        (flags & kSCNetworkReachabilityFlagsConnectionRequired)   ? 'c' : '-',
-                        (flags & kSCNetworkReachabilityFlagsConnectionOnTraffic)  ? 'C' : '-',
-                        (flags & kSCNetworkReachabilityFlagsInterventionRequired) ? 'i' : '-',
-                        (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',
-                        (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
-                        (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-',
-                        comment];
-    
-    os_log_info(nx_network_log, "%@", string);
+    return [NSString stringWithFormat:@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c",
+            (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
+            (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
+            
+            (flags & kSCNetworkReachabilityFlagsTransientConnection)  ? 't' : '-',
+            (flags & kSCNetworkReachabilityFlagsConnectionRequired)   ? 'c' : '-',
+            (flags & kSCNetworkReachabilityFlagsConnectionOnTraffic)  ? 'C' : '-',
+            (flags & kSCNetworkReachabilityFlagsInterventionRequired) ? 'i' : '-',
+            (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',
+            (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
+            (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-'];
     
 }
 
 static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info) {
- 
-#ifdef DEBUG
-    log_flags(flags, "Reachability Callback");
-#endif
+
+//#ifdef DEBUG
+//    os_log_info(nx_network_log, "%@", string_from_flags(flags));
+//#endif
     NXNetwork *network = (__bridge NXNetwork *)info;
     [network _reachabilityStatusChanged];
     

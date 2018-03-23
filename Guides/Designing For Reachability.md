@@ -2,7 +2,7 @@
 
 ## Who, What, and When?
 
-Reachability allows your app to observe changes device's network connection status and handle them appropriately. This is the primary way to handle apps that rely on an internet connection, rather than having the user attempt a connection which might fail. Depending on the reason for the failure, that connection could add a few seconds of loading to your app. It also allows you to abstract away the process of connection state management away from the part of your code base that is making and handling network requests. Nexum uses a single class, an `NXNetwork`, which is used to monitor the reachability of a given host. Each `NXNetwork` can be used for monitor the reachability of a single host only, and can inform your app of changes to the device's ability to reach that host in a number of ways: delegation, a block, and a notification. NXNetwork objects are long-lasting -- you must maintain a reference to the object in memory if you want it to continue observing reachability changes.
+Reachability allows your app to observe changes ina device's network connection status and handle them appropriately. This is the best way to handle a broken inernet connection proactively in apps that rely on an internet connection to work correctly, rather than having the user attempt a connection which might fail. Depending on the reason for the failure, that connection could add a few seconds of loading to your app. Using reachability allows you to abstract the process of connection state management away from the part of your code base that is making and handling network requests. Nexum uses a single class, an `NXNetwork`, which is used to monitor the reachability of a given host. Each `NXNetwork` can be used for monitor the reachability of a single host only, and can inform your app of changes to the device's ability to reach that host in a number of ways: delegation, a block, and a notification. NXNetwork objects are long-lasting -- you must maintain a reference to the object in memory if you want it to continue observing reachability changes.
 
 To design around rechability, you've got to make some decisions early on.
 
@@ -15,13 +15,17 @@ If your app relies a lot on a specific host, say `https://api.myapp.com`, you'll
 You may also not need to listen to changes on every host. `NXNetwork` objects have a `listening` state which, when enabled, will cause blocks to be executed, delegates to be informed, and notifications to be sent upon reachability changes. However, even  `NXNetwork` objects that are not actively `listening` to their reachability status are still up-to-date. You can query their `reachabilityStatus` at any time and expect and accurate response
 
 ### Informing Your Objects
-Depending on the complexity of your reachability needs and the design of your app. you may want to use one or more `NXNetwork` objects to monitor reachability. Each `NXNetwork` object can inform your app via the  `NXNetworkDelegate` protocol, an assignable block, or a notification. You'll need to decide which object(s) are responsbile for handleing these respones. You could have your objects communicate with `NXNetwork` directly, or you could write a wrapper class that handles all the changes internally and informs the rest of your app as necessry. The latter approach is recommended if you plan on using more than one `NXNetwork` object, as you'll find that some responses will be fired twice and may need to be collapser. `NXNetwork` objects don't talk to each other, and you'll want to write functionality to do that if you're simultaneously monitoring two hosts.
+Depending on the complexity of your reachability needs and the design of your app. you may want to use one or more `NXNetwork` objects to monitor reachability. Each `NXNetwork` object can inform your app via the  `NXNetworkDelegate` protocol, an assignable block, or a notification. You'll need to decide which object(s) are responsbile for handleing these respones. You could have your objects communicate with `NXNetwork` directly, or you could write a wrapper class that handles all the changes internally and informs the rest of your app as necessry. The latter approach is recommended if you plan on using more than one `NXNetwork` object, as you'll find that some responses will be fired twice and may need to be collapsed. `NXNetwork` objects don't talk to each other, and you'll want to write functionality to do that if you're simultaneously monitoring two hosts.
 
 ## Using The Shared Network
 
-For the most basic implementation, Nexum is built to get you up and running right away. All you've got to do subscribe to the `NXNetworkReachabilityStatusChanged` to handle general changes to the internet connection, and instantiate the shared instance and tell it to start listening by calling `[[NXNetwork sharedNetwork] startListening];`
+For the most basic implementation, Nexum is built to get you up and running right away. All you've got to do subscribe to the `NXNetworkReachabilityStatusChanged` to handle general changes to the internet connection, and instantiate the shared instance and tell it to start listening by calling:
 
-Then, you can write methods that are called when the notification is sent, and query the current device reachabiltiy status by checking the status of `[NXNetwork sharedNetwork].reachabilityStatus` and behaving accordingly. This is the simplest way to get your app to react to internet connection changes. See the `Example - Basic Reachability` guide for more information.
+```
+[[NXNetwork sharedNetwork] startListening];
+```
+
+Then, you can write methods that are called when the notification is sent, and query the current device reachabiltiy status by checking the status of `[NXNetwork sharedNetwork].reachabilityStatus` and behaving accordingly. This is the simplest way to get your app to react to internet connection changes. See the [Example - Basic Reachability guide](example---basic-reachability.html) for more information.
 
 The shared instance monitors internet reachability, but cannot be used to monitor the reachability of a specific host. If you need more granular control, you might want to create and manage your own `NXNetwork` objects instead.
 
@@ -114,11 +118,11 @@ Then, in every view controller, you might do the following:
 @end
 ```
 
-Alternatively, delegation might make sense if you've got multiple NXNetwork objects that all require similar but slightly different handling. For detailed information on creating a system to handle multiple concurrent listening sessions, see  `Example - Multiple Hosts`
+Alternatively, delegation might make sense if you've got multiple `NXNetwork` objects that all require similar but slightly different handling. You could assign all your `NXNetwork` object to use the same delegate, and have the delegate method evaluate the identity off the `NXNetwork` object befor deciding how to proceed.
 
-## Change Block
+## Block
 
-If reachability is supposed to be a small, self-contained part of your app's experience, using a change block can help contain your implementation into just a single class and a few lines of code.
+If reachability is supposed to be a small, self-contained part of your app's experience, using a block can help contain your implementation into just a single class and a few lines of code.
 
 This might be ideal if:
 

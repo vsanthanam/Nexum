@@ -113,9 +113,8 @@
 		072FCB2920620A1E007F9030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076D7F7920634045004AC894 /* Example - Basic Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Example - Basic Reachability.md"; sourceTree = "<group>"; };
 		076D7F7A2063F319004AC894 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		076D7F7D2063F3B5004AC894 /* Example - Multiple Hosts.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Example - Multiple Hosts.md"; sourceTree = "<group>"; };
 		076D7F832063FA28004AC894 /* Designing For Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Designing For Reachability.md"; sourceTree = "<group>"; };
-		076D7F842063FADE004AC894 /* Setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Setup.md; sourceTree = "<group>"; };
+		076D7F842063FADE004AC894 /* Project Setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Project Setup.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				076D7F7920634045004AC894 /* Example - Basic Reachability.md */,
-				076D7F7D2063F3B5004AC894 /* Example - Multiple Hosts.md */,
 				076D7F832063FA28004AC894 /* Designing For Reachability.md */,
-				076D7F842063FADE004AC894 /* Setup.md */,
+				076D7F842063FADE004AC894 /* Project Setup.md */,
 			);
 			path = Guides;
 			sourceTree = "<group>";

@@ -7,9 +7,11 @@
 
 #import "AppDelegate.h"
 
-#import "Nexum.h"
+#import "NXNetwork.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) AppleReachability *reachability;
 
 @end
 
