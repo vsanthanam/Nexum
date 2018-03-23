@@ -258,6 +258,19 @@ static os_log_t nx_network_log;
 
 #pragma mark - C Functions
 
+static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info) {
+
+//#ifdef DEBUG
+//    os_log_info(nx_network_log, "%@", string_from_flags(flags));
+//#endif
+    
+    NXNetwork *network = (__bridge NXNetwork *)info;
+    [network _reachabilityStatusChanged];
+    
+}
+
+#pragma mark - C Utils
+
 NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
     
     if ((flags & kSCNetworkReachabilityFlagsReachable) == 0) {
@@ -307,17 +320,6 @@ NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
             (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',
             (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
             (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-'];
-    
-}
-
-static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info) {
-
-#ifdef DEBUG
-    os_log_info(nx_network_log, "%@", string_from_flags(flags));
-#endif
-    
-    NXNetwork *network = (__bridge NXNetwork *)info;
-    [network _reachabilityStatusChanged];
     
 }
 
