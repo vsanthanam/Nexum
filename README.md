@@ -24,6 +24,6 @@ See the  [Designing for Reachability](designing-for-reachability.html) for a det
 
 ## Docs
 
-The full documentaion is available [here](https://github.vsanthanam.com), hosted on GitHub Pages, but is also included as an xcode docset.
+The full documentaion is available [here](https://vsanthanam.github.io/Nexum/Documentation/), hosted on GitHub Pages, but is also included as an xcode docset.
 
 Documentation with made with [Jazzy](https://github.com/realm/jazzy) by [Realm](https://realm.io), using the [Jony Theme](https://github.com/HarshilShah/Jony) by [Harshil Shah](https://github.com/HarshilShah/)
