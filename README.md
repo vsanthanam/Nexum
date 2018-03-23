@@ -12,7 +12,7 @@ Nexum is compiled with the iOS 11.2 SDK, but support iOS 9.x+
 
 ## Set Up
 
-Nexum is distributed as a static framework. Take a look at the [Project Setup guide](project-setup.html) for detailed step by step instruction on setting up your project, building the documentation, and using the included example app.
+Nexum is distributed as a static framework. Take a look at the [Project Setup guide](https://vsanthanam.github.io/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project, building the documentation, and using the included example app.
 
 ## Usage
 
@@ -20,7 +20,7 @@ Basic usage is pretty simple:
 1. Create and retain a reference to an instance of an `NXNetwork` object, or use the shared instance for basic projects.
 2. Observe changes in reachability using `NXNetworkDelegate`,  `NXNetworkReachabilityStatusChangedNotification`, or a block.
 
-See the  [Designing for Reachability](designing-for-reachability.html) for a detailed primer on potential different implentations, and see  [Example - Basic Reachability](example---basic-reachability.html) for a quick start.
+See the  [Designing for Reachability](https://vsanthanam.github.io/Nexum/Documentation/designing-for-reachability.html) for a detailed primer on potential different implentations, and see  [Example - Basic Reachability](https://vsanthanam.github.io/Nexum/Documentation/example---basic-reachability.html) for a quick start.
 
 ## Docs
 

@@ -25,7 +25,7 @@ For the most basic implementation, Nexum is built to get you up and running righ
 [[NXNetwork sharedNetwork] startListening];
 ```
 
-Then, you can write methods that are called when the notification is sent, and query the current device reachabiltiy status by checking the status of `[NXNetwork sharedNetwork].reachabilityStatus` and behaving accordingly. This is the simplest way to get your app to react to internet connection changes. See the [Example - Basic Reachability guide](example---basic-reachability.html) for more information.
+Then, you can write methods that are called when the notification is sent, and query the current device reachabiltiy status by checking the status of `[NXNetwork sharedNetwork].reachabilityStatus` and behaving accordingly. This is the simplest way to get your app to react to internet connection changes. See the [Example - Basic Reachability guide](https://vsanthanam.github.io/Nexum/Documentation/example---basic-reachability.html) for more information.
 
 The shared instance monitors internet reachability, but cannot be used to monitor the reachability of a specific host. If you need more granular control, you might want to create and manage your own `NXNetwork` objects instead.
 
