@@ -147,6 +147,20 @@ static os_log_t nx_network_log;
     
 }
 
+- (instancetype)initWithLocalAddress:(const struct sockaddr *)localAddress remoteAddress:(const struct sockaddr *)remoteAddress {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        self->_reachability = SCNetworkReachabilityCreateWithAddressPair(kCFAllocatorDefault, localAddress, remoteAddress);
+        
+    }
+    
+    return self;
+    
+}
+
 - (BOOL)startListening {
     
     BOOL rv = NO;

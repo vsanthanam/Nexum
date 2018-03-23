@@ -16,7 +16,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">Nexum Docs</a>
-          <span class="no-mobile"> (95% documented)</span>
+          <span class="no-mobile"> (91% documented)</span>
         </p>
     
         <p class="header-right">
@@ -233,7 +233,71 @@
                         </div>
                         <div>
                           <h4>Return Value</h4>
-                          <p>The network object.</p>
+                          <p>The network object</p>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NXNetwork(im)initWithLocalAddress:remoteAddress:"></a>
+                      <a name="//apple_ref/objc/Method/-initWithLocalAddress:remoteAddress:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXNetwork(im)initWithLocalAddress:remoteAddress:">-initWithLocalAddress:remoteAddress:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Create a network object that observes changes to teh reachability of an IP Address pair</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span>
+<span class="nf">initWithLocalAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="k">const</span> <span class="k">struct</span> <span class="n"><a href="../Structs.html#/c:@S@sockaddr">sockaddr</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">localAddress</span>
+       <span class="nf">remoteAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="k">const</span> <span class="k">struct</span> <span class="n"><a href="../Structs.html#/c:@S@sockaddr">sockaddr</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">remoteAddress</span><span class="p">;</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>localAddress</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The local IP address</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>remoteAddress</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The remote IP address</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>The network object</p>
                         </div>
                       </section>
                     </div>

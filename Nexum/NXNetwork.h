@@ -106,9 +106,18 @@ typedef void (^NXNetworkReachabilityStatusChangedHandler)(NXNetwork * _Nonnull n
  Create network object that observes changes to the reachability of a single IP address and only that IP address
  
  @param hostAddress The IP address
- @return The network object.
+ @return The network object
  */
 - (nullable instancetype)initWithHostAddress:(nonnull const struct sockaddr *)hostAddress NS_DESIGNATED_INITIALIZER;
+
+/**
+ Create a network object that observes changes to the reachability of an IP Address pair
+
+ @param localAddress The local IP address
+ @param remoteAddress The remote IP address
+ @return The network object
+ */
+- (nullable instancetype)initWithLocalAddress:(nonnull const struct sockaddr *)localAddress remoteAddress:(nonnull const struct sockaddr *)remoteAddress NS_DESIGNATED_INITIALIZER;
 
 /**
  @name Responding To Reachability Changes

@@ -6,6 +6,13 @@
       "symbol": "sockaddr",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vsanthanam/Documents/Dev/Nexum/Nexum/NXNetwork.h",
+      "line": 120,
+      "symbol": "sockaddr",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/vsanthanam/Documents/Dev/Nexum"
