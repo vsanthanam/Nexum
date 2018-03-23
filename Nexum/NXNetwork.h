@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, NXNetworkReachabilityStatus) {
     /**
      The network object is reachable over WiFi
      */
-    NXNetworkReachabilityStatusReachableOverWLAN = 1,
+    NXNetworkReachabilityStatusReachableOverWiFi = 1,
     
     /**
      The network object is reachable over WWAN

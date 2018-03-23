@@ -283,7 +283,7 @@ NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
     
     if ((flags & kSCNetworkReachabilityFlagsConnectionRequired) == 0) {
         
-        rv = NXNetworkReachabilityStatusReachableOverWLAN;
+        rv = NXNetworkReachabilityStatusReachableOverWiFi;
         
     }
     
@@ -291,7 +291,7 @@ NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
         
         if ((flags & kSCNetworkReachabilityFlagsInterventionRequired) == 0) {
             
-            rv = NXNetworkReachabilityStatusReachableOverWLAN;
+            rv = NXNetworkReachabilityStatusReachableOverWiFi;
             
         }
         
@@ -325,9 +325,10 @@ NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
 
 static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info) {
 
-//#ifdef DEBUG
-//    os_log_info(nx_network_log, "%@", string_from_flags(flags));
-//#endif
+#ifdef DEBUG
+    os_log_info(nx_network_log, "%@", string_from_flags(flags));
+#endif
+    
     NXNetwork *network = (__bridge NXNetwork *)info;
     [network _reachabilityStatusChanged];
     
