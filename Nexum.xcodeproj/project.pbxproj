@@ -38,16 +38,6 @@
 		072FCAE92061F7EC007F9030 /* NXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 072FCAE52061EF0B007F9030 /* NXNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072FCAFA20620978007F9030 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAF920620978007F9030 /* CoreFoundation.framework */; };
 		072FCAFC2062097F007F9030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAFB2062097F007F9030 /* SystemConfiguration.framework */; };
-		072FCB0520620A1D007F9030 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB0420620A1D007F9030 /* AppDelegate.m */; };
-		072FCB0820620A1D007F9030 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB0720620A1D007F9030 /* ViewController.m */; };
-		072FCB0B20620A1E007F9030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072FCB0920620A1E007F9030 /* Main.storyboard */; };
-		072FCB0D20620A1E007F9030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072FCB0C20620A1E007F9030 /* Assets.xcassets */; };
-		072FCB1020620A1E007F9030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072FCB0E20620A1E007F9030 /* LaunchScreen.storyboard */; };
-		072FCB1320620A1E007F9030 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB1220620A1E007F9030 /* main.m */; };
-		072FCB1D20620A1E007F9030 /* NexumExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB1C20620A1E007F9030 /* NexumExampleTests.m */; };
-		072FCB2820620A1E007F9030 /* NexumExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCB2720620A1E007F9030 /* NexumExampleUITests.m */; };
-		072FCB3320620A46007F9030 /* NXNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCAE62061EF0B007F9030 /* NXNetwork.m */; };
-		076D7F7B2063F319004AC894 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 076D7F7A2063F319004AC894 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,20 +47,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 072FCADA2061EEF1007F9030;
 			remoteInfo = Nexum;
-		};
-		072FCB1920620A1E007F9030 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 072FCAD12061EEE5007F9030 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 072FCB0020620A1D007F9030;
-			remoteInfo = NexumExample;
-		};
-		072FCB2420620A1E007F9030 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 072FCAD12061EEE5007F9030 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 072FCB0020620A1D007F9030;
-			remoteInfo = NexumExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -95,22 +71,6 @@
 		072FCAEA2061F873007F9030 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		072FCAF920620978007F9030 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		072FCAFB2062097F007F9030 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		072FCB0120620A1D007F9030 /* NexumExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NexumExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		072FCB0320620A1D007F9030 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		072FCB0420620A1D007F9030 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		072FCB0620620A1D007F9030 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		072FCB0720620A1D007F9030 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		072FCB0A20620A1E007F9030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		072FCB0C20620A1E007F9030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		072FCB0F20620A1E007F9030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		072FCB1120620A1E007F9030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		072FCB1220620A1E007F9030 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		072FCB1820620A1E007F9030 /* NexumExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexumExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		072FCB1C20620A1E007F9030 /* NexumExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NexumExampleTests.m; sourceTree = "<group>"; };
-		072FCB1E20620A1E007F9030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		072FCB2320620A1E007F9030 /* NexumExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexumExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		072FCB2720620A1E007F9030 /* NexumExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NexumExampleUITests.m; sourceTree = "<group>"; };
-		072FCB2920620A1E007F9030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076D7F7920634045004AC894 /* Example - Basic Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Example - Basic Reachability.md"; sourceTree = "<group>"; };
 		076D7F7A2063F319004AC894 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		076D7F832063FA28004AC894 /* Designing For Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Designing For Reachability.md"; sourceTree = "<group>"; };
@@ -127,27 +87,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		072FCAFE20620A1D007F9030 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		072FCB1520620A1E007F9030 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		072FCB2020620A1E007F9030 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,9 +96,6 @@
 				076D7F7A2063F319004AC894 /* README.md */,
 				076D7F7820634005004AC894 /* Guides */,
 				072FCADD2061EEF1007F9030 /* Nexum */,
-				072FCB0220620A1D007F9030 /* NexumExample */,
-				072FCB1B20620A1E007F9030 /* NexumExampleTests */,
-				072FCB2620620A1E007F9030 /* NexumExampleUITests */,
 				072FCADC2061EEF1007F9030 /* Products */,
 				072FCAF820620978007F9030 /* Frameworks */,
 			);
@@ -169,9 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				072FCADB2061EEF1007F9030 /* libNexum.a */,
-				072FCB0120620A1D007F9030 /* NexumExample.app */,
-				072FCB1820620A1E007F9030 /* NexumExampleTests.xctest */,
-				072FCB2320620A1E007F9030 /* NexumExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,40 +127,6 @@
 				072FCAF920620978007F9030 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		072FCB0220620A1D007F9030 /* NexumExample */ = {
-			isa = PBXGroup;
-			children = (
-				072FCB0320620A1D007F9030 /* AppDelegate.h */,
-				072FCB0420620A1D007F9030 /* AppDelegate.m */,
-				072FCB0620620A1D007F9030 /* ViewController.h */,
-				072FCB0720620A1D007F9030 /* ViewController.m */,
-				072FCB0920620A1E007F9030 /* Main.storyboard */,
-				072FCB0C20620A1E007F9030 /* Assets.xcassets */,
-				072FCB0E20620A1E007F9030 /* LaunchScreen.storyboard */,
-				072FCB1120620A1E007F9030 /* Info.plist */,
-				072FCB1220620A1E007F9030 /* main.m */,
-			);
-			path = NexumExample;
-			sourceTree = "<group>";
-		};
-		072FCB1B20620A1E007F9030 /* NexumExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				072FCB1C20620A1E007F9030 /* NexumExampleTests.m */,
-				072FCB1E20620A1E007F9030 /* Info.plist */,
-			);
-			path = NexumExampleTests;
-			sourceTree = "<group>";
-		};
-		072FCB2620620A1E007F9030 /* NexumExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				072FCB2720620A1E007F9030 /* NexumExampleUITests.m */,
-				072FCB2920620A1E007F9030 /* Info.plist */,
-			);
-			path = NexumExampleUITests;
 			sourceTree = "<group>";
 		};
 		076D7F7820634005004AC894 /* Guides */ = {
@@ -273,59 +172,6 @@
 			productReference = 072FCADB2061EEF1007F9030 /* libNexum.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		072FCB0020620A1D007F9030 /* NexumExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 072FCB2A20620A1E007F9030 /* Build configuration list for PBXNativeTarget "NexumExample" */;
-			buildPhases = (
-				072FCAFD20620A1D007F9030 /* Sources */,
-				072FCAFE20620A1D007F9030 /* Frameworks */,
-				072FCAFF20620A1D007F9030 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NexumExample;
-			productName = NexumExample;
-			productReference = 072FCB0120620A1D007F9030 /* NexumExample.app */;
-			productType = "com.apple.product-type.application";
-		};
-		072FCB1720620A1E007F9030 /* NexumExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 072FCB2D20620A1E007F9030 /* Build configuration list for PBXNativeTarget "NexumExampleTests" */;
-			buildPhases = (
-				072FCB1420620A1E007F9030 /* Sources */,
-				072FCB1520620A1E007F9030 /* Frameworks */,
-				072FCB1620620A1E007F9030 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				072FCB1A20620A1E007F9030 /* PBXTargetDependency */,
-			);
-			name = NexumExampleTests;
-			productName = NexumExampleTests;
-			productReference = 072FCB1820620A1E007F9030 /* NexumExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		072FCB2220620A1E007F9030 /* NexumExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 072FCB3020620A1E007F9030 /* Build configuration list for PBXNativeTarget "NexumExampleUITests" */;
-			buildPhases = (
-				072FCB1F20620A1E007F9030 /* Sources */,
-				072FCB2020620A1E007F9030 /* Frameworks */,
-				072FCB2120620A1E007F9030 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				072FCB2520620A1E007F9030 /* PBXTargetDependency */,
-			);
-			name = NexumExampleUITests;
-			productName = NexumExampleUITests;
-			productReference = 072FCB2320620A1E007F9030 /* NexumExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -346,20 +192,6 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					072FCB0020620A1D007F9030 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
-					072FCB1720620A1E007F9030 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 072FCB0020620A1D007F9030;
-					};
-					072FCB2220620A1E007F9030 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 072FCB0020620A1D007F9030;
-					};
 				};
 			};
 			buildConfigurationList = 072FCAD42061EEE5007F9030 /* Build configuration list for PBXProject "Nexum" */;
@@ -378,40 +210,9 @@
 				072FCADA2061EEF1007F9030 /* Nexum */,
 				072FCAEC2061F996007F9030 /* Framework */,
 				072FCAF32061FD95007F9030 /* Documentation */,
-				072FCB0020620A1D007F9030 /* NexumExample */,
-				072FCB1720620A1E007F9030 /* NexumExampleTests */,
-				072FCB2220620A1E007F9030 /* NexumExampleUITests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		072FCAFF20620A1D007F9030 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				072FCB1020620A1E007F9030 /* LaunchScreen.storyboard in Resources */,
-				072FCB0D20620A1E007F9030 /* Assets.xcassets in Resources */,
-				076D7F7B2063F319004AC894 /* README.md in Resources */,
-				072FCB0B20620A1E007F9030 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		072FCB1620620A1E007F9030 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		072FCB2120620A1E007F9030 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		072FCAEB2061F893007F9030 /* Build Framework Bundle */ = {
@@ -467,33 +268,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		072FCAFD20620A1D007F9030 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				072FCB0820620A1D007F9030 /* ViewController.m in Sources */,
-				072FCB1320620A1E007F9030 /* main.m in Sources */,
-				072FCB3320620A46007F9030 /* NXNetwork.m in Sources */,
-				072FCB0520620A1D007F9030 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		072FCB1420620A1E007F9030 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				072FCB1D20620A1E007F9030 /* NexumExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		072FCB1F20620A1E007F9030 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				072FCB2820620A1E007F9030 /* NexumExampleUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -502,36 +276,7 @@
 			target = 072FCADA2061EEF1007F9030 /* Nexum */;
 			targetProxy = 072FCAF02061F99C007F9030 /* PBXContainerItemProxy */;
 		};
-		072FCB1A20620A1E007F9030 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 072FCB0020620A1D007F9030 /* NexumExample */;
-			targetProxy = 072FCB1920620A1E007F9030 /* PBXContainerItemProxy */;
-		};
-		072FCB2520620A1E007F9030 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 072FCB0020620A1D007F9030 /* NexumExample */;
-			targetProxy = 072FCB2420620A1E007F9030 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		072FCB0920620A1E007F9030 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				072FCB0A20620A1E007F9030 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		072FCB0E20620A1E007F9030 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				072FCB0F20620A1E007F9030 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		072FCAD52061EEE5007F9030 /* Debug */ = {
@@ -712,368 +457,6 @@
 			};
 			name = Release;
 		};
-		072FCB2B20620A1E007F9030 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y88YPD4RJA;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = NexumExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.NexumExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		072FCB2C20620A1E007F9030 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Y88YPD4RJA;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = NexumExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.NexumExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		072FCB2E20620A1E007F9030 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y88YPD4RJA;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = NexumExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.NexumExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NexumExample.app/NexumExample";
-			};
-			name = Debug;
-		};
-		072FCB2F20620A1E007F9030 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Y88YPD4RJA;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = NexumExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.NexumExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NexumExample.app/NexumExample";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		072FCB3120620A1E007F9030 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y88YPD4RJA;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = NexumExampleUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.NexumExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NexumExample;
-			};
-			name = Debug;
-		};
-		072FCB3220620A1E007F9030 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Y88YPD4RJA;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = NexumExampleUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.NexumExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NexumExample;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1109,33 +492,6 @@
 			buildConfigurations = (
 				072FCAF52061FD95007F9030 /* Debug */,
 				072FCAF62061FD95007F9030 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		072FCB2A20620A1E007F9030 /* Build configuration list for PBXNativeTarget "NexumExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				072FCB2B20620A1E007F9030 /* Debug */,
-				072FCB2C20620A1E007F9030 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		072FCB2D20620A1E007F9030 /* Build configuration list for PBXNativeTarget "NexumExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				072FCB2E20620A1E007F9030 /* Debug */,
-				072FCB2F20620A1E007F9030 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		072FCB3020620A1E007F9030 /* Build configuration list for PBXNativeTarget "NexumExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				072FCB3120620A1E007F9030 /* Debug */,
-				072FCB3220620A1E007F9030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

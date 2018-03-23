@@ -7,6 +7,7 @@
 
 @import CoreFoundation;
 @import os.log;
+@import Darwin.POSIX.arpa.inet;
 
 #import "NXNetwork.h"
 

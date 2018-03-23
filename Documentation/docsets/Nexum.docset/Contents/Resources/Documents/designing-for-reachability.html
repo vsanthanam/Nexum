@@ -47,7 +47,9 @@
               <h1 id='designing-for-reachability' class='heading'>Designing For Reachability</h1>
 <h2 id='who-what-and-when' class='heading'>Who, What, and When?</h2>
 
-<p>Reachability allows your app to observe changes ina device&rsquo;s network connection status and handle them appropriately. This is the best way to handle a broken inernet connection proactively in apps that rely on an internet connection to work correctly, rather than having the user attempt a connection which might fail. Depending on the reason for the failure, that connection could add a few seconds of loading to your app. Using reachability allows you to abstract the process of connection state management away from the part of your code base that is making and handling network requests. Nexum uses a single class, an <code><a href="Classes/NXNetwork.html">NXNetwork</a></code>, which is used to monitor the reachability of a given host. Each <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> can be used for monitor the reachability of a single host only, and can inform your app of changes to the device&rsquo;s ability to reach that host in a number of ways: delegation, a block, and a notification. NXNetwork objects are long-lasting &ndash; you must maintain a reference to the object in memory if you want it to continue observing reachability changes.</p>
+<p>Reachability allows your app to observe changes in a device&rsquo;s network connection status and handle them appropriately. This is the best way to handle a broken inernet connection proactively in apps that rely on an internet connection to work correctly, rather than having the user attempt a connection which might fail. Depending on the reason for the failure, that connection could add a few seconds of loading to your app.</p>
+
+<p>Using is the preferred way of handling that interaction. You can pre-empt a failing request, and you can abstract the process of connection state management away from the part of your code that is making and responding to network requests. Nexum uses a single class, an <code><a href="Classes/NXNetwork.html">NXNetwork</a></code>, which is used to monitor the reachability of a given host. Each <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> can be used for monitor the reachability of a single host only, and can inform your app of changes to the device&rsquo;s ability to reach that host in a number of ways: delegation, a block, and a notification. NXNetwork objects are long-lasting &ndash; you must maintain a reference to the object in memory if you want it to continue observing reachability changes.</p>
 
 <p>To design around rechability, you&rsquo;ve got to make some decisions early on.</p>
 <h3 id='what-are-you-monitoring' class='heading'>What are you monitoring?</h3>
@@ -77,8 +79,7 @@
 <p>This might be ideal if:</p>
 
 <ol>
-<li>You want your handling of reachability changes to change a lot during runtime. For example, you could re-assign an <code><a href="Classes/NXNetwork.html">NXNetwork</a></code>&lsquo;s <code>.delegate</code> property to whatever view controller is currently visible.</li>
-<li>Only one delegate object is handling reachability changes at any given time for a given <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> object at any given time. (I.e., one <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> isn&rsquo;t being used to inform multiple objects. Rather the delegate object handles that)</li>
+<li>The way you handle reachability changes a lot during runtime. For example, you could re-assign an <code><a href="Classes/NXNetwork.html">NXNetwork</a></code>&lsquo;s <code>.delegate</code> property to whatever view controller is currently visible.</li>
 <li>You have multiple <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> objects which might have similar handling. (i.e. you&rsquo;re checking reachaiblity for multiple hosts concurrently)</li>
 </ol>
 
@@ -86,7 +87,7 @@
 <p>NOTE: Using delegation with the shared instance is not recommended</p>
 </blockquote>
 
-<p>In this example, a single NXNetwork object is controlled by the AppDelegate, and every view controller that becomes visible become&rsquo;s its delegate.</p>
+<p>In this example, a single <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> object is controlled by the AppDelegate, and every view controller that becomes visible become&rsquo;s its delegate.</p>
 
 <p><em>AppDelegate.h</em></p>
 <pre class="highlight plaintext"><code>
@@ -158,8 +159,6 @@
 
 @end
 </code></pre>
-
-<p>Alternatively, delegation might make sense if you&rsquo;ve got multiple <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> objects that all require similar but slightly different handling. You could assign all your <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> object to use the same delegate, and have the delegate method evaluate the identity off the <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> object befor deciding how to proceed.</p>
 <h2 id='block' class='heading'>Block</h2>
 
 <p>If reachability is supposed to be a small, self-contained part of your app&rsquo;s experience, using a block can help contain your implementation into just a single class and a few lines of code.</p>
@@ -167,10 +166,10 @@
 <p>This might be ideal if:</p>
 
 <ol>
-<li>Reachability is part of only a single class or view controller and isn&rsquo;t a permeating feature of your app (say, to monitor a single <code>WKWebView</code> or something)</li>
+<li>Reachability is part of only a single class or view controller and isn&rsquo;t a permeating feature of your app (say, to monitor the internet connection when a user is viewing a view controller with a <code>WKWebView</code> on it)</li>
 <li>Reachability monitoring is temporary, and not something you expect to happen during the entire life-cycle of your app. Most of your app doesn&rsquo;t need reachability monitoring.</li>
-<li>In addition to long-standing reachability monitoring, you need to temporarily monitor an additional host and you want this implementation to be distinct and separate from your other, global reachability system.</li>
-<li>Each instance of <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> has its own, totally unique behavior upon reachability change and you don&rsquo;t want to deal with delegation or notifications, whigh might require you to verify <strong>which</strong> network made the change.</li>
+<li>In addition to your long-standing reachability monitoring, you need to temporarily monitor an additional host and you want this implementation to be distinct and separate from your other, global reachability monitoring system.</li>
+<li>Each instance of <code><a href="Classes/NXNetwork.html">NXNetwork</a></code> has its own, totally unique behavior upon reachability changes and you don&rsquo;t want to deal with delegation or notifications, whigh might require you to fir verify <strong>which</strong> network made the change before handling it.</li>
 </ol>
 
 <blockquote>
@@ -200,7 +199,7 @@
 
         // do something with updated reachability status
 
-    }
+    };
 
     [self.network startListening];
 

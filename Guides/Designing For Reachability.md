@@ -2,7 +2,9 @@
 
 ## Who, What, and When?
 
-Reachability allows your app to observe changes ina device's network connection status and handle them appropriately. This is the best way to handle a broken inernet connection proactively in apps that rely on an internet connection to work correctly, rather than having the user attempt a connection which might fail. Depending on the reason for the failure, that connection could add a few seconds of loading to your app. Using reachability allows you to abstract the process of connection state management away from the part of your code base that is making and handling network requests. Nexum uses a single class, an `NXNetwork`, which is used to monitor the reachability of a given host. Each `NXNetwork` can be used for monitor the reachability of a single host only, and can inform your app of changes to the device's ability to reach that host in a number of ways: delegation, a block, and a notification. NXNetwork objects are long-lasting -- you must maintain a reference to the object in memory if you want it to continue observing reachability changes.
+Reachability allows your app to observe changes in a device's network connection status and handle them appropriately. This is the best way to handle a broken inernet connection proactively in apps that rely on an internet connection to work correctly, rather than having the user attempt a connection which might fail. Depending on the reason for the failure, that connection could add a few seconds of loading to your app.
+
+Using is the preferred way of handling that interaction. You can pre-empt a failing request, and you can abstract the process of connection state management away from the part of your code that is making and responding to network requests. Nexum uses a single class, an `NXNetwork`, which is used to monitor the reachability of a given host. Each `NXNetwork` can be used for monitor the reachability of a single host only, and can inform your app of changes to the device's ability to reach that host in a number of ways: delegation, a block, and a notification. NXNetwork objects are long-lasting -- you must maintain a reference to the object in memory if you want it to continue observing reachability changes.
 
 To design around rechability, you've got to make some decisions early on.
 
@@ -35,13 +37,12 @@ Depending on how your app is structured and which object owns your instance of `
 
 This might be ideal if:
 
-1. You want your handling of reachability changes to change a lot during runtime. For example, you could re-assign an `NXNetwork`'s `.delegate` property to whatever view controller is currently visible.
-2. Only one delegate object is handling reachability changes at any given time for a given `NXNetwork` object at any given time. (I.e., one `NXNetwork` isn't being used to inform multiple objects. Rather the delegate object handles that)
-3. You have multiple `NXNetwork` objects which might have similar handling. (i.e. you're checking reachaiblity for multiple hosts concurrently)
+1. The way you handle reachability changes a lot during runtime. For example, you could re-assign an `NXNetwork`'s `.delegate` property to whatever view controller is currently visible.
+2. You have multiple `NXNetwork` objects which might have similar handling. (i.e. you're checking reachaiblity for multiple hosts concurrently)
 
 > NOTE: Using delegation with the shared instance is not recommended
 
-In this example, a single NXNetwork object is controlled by the AppDelegate, and every view controller that becomes visible become's its delegate.
+In this example, a single `NXNetwork` object is controlled by the AppDelegate, and every view controller that becomes visible become's its delegate.
 
 *AppDelegate.h*
 ```
@@ -118,18 +119,16 @@ Then, in every view controller, you might do the following:
 @end
 ```
 
-Alternatively, delegation might make sense if you've got multiple `NXNetwork` objects that all require similar but slightly different handling. You could assign all your `NXNetwork` object to use the same delegate, and have the delegate method evaluate the identity off the `NXNetwork` object befor deciding how to proceed.
-
 ## Block
 
 If reachability is supposed to be a small, self-contained part of your app's experience, using a block can help contain your implementation into just a single class and a few lines of code.
 
 This might be ideal if:
 
-1. Reachability is part of only a single class or view controller and isn't a permeating feature of your app (say, to monitor a single `WKWebView` or something)
+1. Reachability is part of only a single class or view controller and isn't a permeating feature of your app (say, to monitor the internet connection when a user is viewing a view controller with a `WKWebView` on it)
 2. Reachability monitoring is temporary, and not something you expect to happen during the entire life-cycle of your app. Most of your app doesn't need reachability monitoring.
-3. In addition to long-standing reachability monitoring, you need to temporarily monitor an additional host and you want this implementation to be distinct and separate from your other, global reachability system.
-4. Each instance of `NXNetwork` has its own, totally unique behavior upon reachability change and you don't want to deal with delegation or notifications, whigh might require you to verify **which** network made the change.
+3. In addition to your long-standing reachability monitoring, you need to temporarily monitor an additional host and you want this implementation to be distinct and separate from your other, global reachability monitoring system.
+4. Each instance of `NXNetwork` has its own, totally unique behavior upon reachability changes and you don't want to deal with delegation or notifications, whigh might require you to fir verify **which** network made the change before handling it.
 
 > NOTE: Using change blocks with the shared instance is not recommended
 
@@ -158,7 +157,7 @@ Using a change block is pretty simple -- just remember to assign the block to th
     
         // do something with updated reachability status
     
-    }
+    };
     
     [self.network startListening];
 

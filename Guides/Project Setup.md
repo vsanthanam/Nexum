@@ -26,5 +26,3 @@
 2. Delete the `{Repo}/Release` directory if it exists
 3. Open `Nexum.xcodeproj`
 4. Build the  `Documentation` target for  `Generic iOS Device`
-
-## Example App
