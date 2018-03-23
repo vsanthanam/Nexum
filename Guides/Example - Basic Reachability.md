@@ -38,14 +38,13 @@ then, you an write a method to handle changes when the notification is fired, li
 
     // Don't forget to update the UI on the main thread or you'll be a sad boi
 
-    if ([NXNetwork sharedNetwork].reachabilityStatus == NXNetworkReachabilityStatusNotReachable) {
+    if ([NXNetwork sharedNetwork].reachable) {
 
-        NSLog(@"Device has no internet connection. Do Something");
+        NSLog(@"Device has an internet connection. Do Something");
 
     } else {
     
-    
-        NSLog(@"Device has an internet connection. Do Something");
+        NSLog(@"Device has no internet connection. Do Something");
 
     }
     

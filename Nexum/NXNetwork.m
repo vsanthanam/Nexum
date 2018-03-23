@@ -94,6 +94,12 @@ static os_log_t nx_network_log;
 
 #pragma mark - Property Access Methods
 
+- (BOOL)isListening {
+    
+    return (BOOL)_reachability;
+    
+}
+
 - (NXNetworkReachabilityStatus)reachabilityStatus {
     
     NXNetworkReachabilityStatus rv = NXNetworkReachabilityStatusNotReachable;
@@ -110,9 +116,57 @@ static os_log_t nx_network_log;
     
 }
 
-- (BOOL)isListening {
+- (BOOL)isReachable {
+    
+    return (self.reachabilityStatus != NXNetworkReachabilityStatusNotReachable);
+    
+}
+
+- (BOOL)isConnectionRequired {
+    
+    BOOL rv = NO;
+    
+    SCNetworkReachabilityFlags flags;
+    
+    if (SCNetworkReachabilityGetFlags(_reachability, &flags)) {
+        
+        rv = (flags & kSCNetworkReachabilityFlagsConnectionRequired);
+        
+    }
+    
+    return rv;
+    
+}
+
+- (BOOL)isOnDemand {
  
-    return (BOOL)_reachability;
+    BOOL rv = NO;
+    
+    SCNetworkReachabilityFlags flags;
+    
+    if (SCNetworkReachabilityGetFlags(_reachability, &flags)) {
+        
+        rv = ((flags & kSCNetworkReachabilityFlagsConnectionRequired) && (flags & (kSCNetworkReachabilityFlagsConnectionOnTraffic | kSCNetworkReachabilityFlagsConnectionOnDemand)));
+        
+    }
+    
+    return rv;
+    
+}
+
+- (BOOL)isInterventionRequired {
+    
+    BOOL rv = NO;
+    
+    SCNetworkReachabilityFlags flags;
+    
+    if (SCNetworkReachabilityGetFlags(_reachability, &flags)) {
+        
+        rv = ((flags & kSCNetworkReachabilityFlagsConnectionRequired) && (flags & kSCNetworkReachabilityFlagsInterventionRequired));
+        
+    }
+    
+    return rv;
     
 }
 
@@ -229,7 +283,7 @@ NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
     
     if ((flags & kSCNetworkReachabilityFlagsConnectionRequired) == 0) {
         
-        rv = NXNetworkReachabilityStatusReachableOverWiFi;
+        rv = NXNetworkReachabilityStatusReachableOverWLAN;
         
     }
     
@@ -237,7 +291,7 @@ NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
         
         if ((flags & kSCNetworkReachabilityFlagsInterventionRequired) == 0) {
             
-            rv = NXNetworkReachabilityStatusReachableOverWiFi;
+            rv = NXNetworkReachabilityStatusReachableOverWLAN;
             
         }
         

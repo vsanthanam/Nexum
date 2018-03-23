@@ -18,7 +18,7 @@ extern NSString * const _Nonnull NXNetworkReachabilityStatusChanged;
  An enumeration describing the various reachability statuses (statii?)
 
  - NXNetworkReachabilityStatusNotReachable: The network object is not reachable
- - NXNetworkReachabilityStatusReachableOverWiFi: The network object is reachable over WiFi
+ - NXNetworkReachabilityStatusReachableOverWLFi: The network object is reachable over WLAN
  - NXNetworkReachabilityStatusReachableOverWWAN: The network object is reachable over WWAN
  */
 typedef NS_ENUM(NSInteger, NXNetworkReachabilityStatus) {
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, NXNetworkReachabilityStatus) {
     /**
      The network object is reachable over WiFi
      */
-    NXNetworkReachabilityStatusReachableOverWiFi = 1,
+    NXNetworkReachabilityStatusReachableOverWLAN = 1,
     
     /**
      The network object is reachable over WWAN
@@ -153,12 +153,32 @@ typedef void (^NXNetworkReachabilityStatusChangedHandler)(NXNetwork * _Nonnull n
 - (BOOL)stopListening;
 
 /**
- @name Reachability Status
+ @name Reachability Info
  */
 
 /**
  The current reachability status of the network object
  */
 @property (NS_NONATOMIC_IOSONLY, readonly) NXNetworkReachabilityStatus reachabilityStatus;
+
+/**
+ YES if the device is reachable, otherwise NO.
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, getter=isReachable) BOOL reachable;
+
+/**
+ YES if connection is required, otherwise NO.
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, getter=isConnectionRequired) BOOL connectionRequired;
+
+/**
+ YES if connection is on demand, otherwise NO.
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, getter=isOnDemand) BOOL onDemand;
+
+/**
+ YES if intervention is required, otherwise NO.
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, getter=isInterventionRequired) BOOL interventionRequired;
 
 @end

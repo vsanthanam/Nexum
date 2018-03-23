@@ -16,7 +16,7 @@
 1. Navigation to `{Repo}/Nexum/`
 2. Copy `NXNetwork.h` and `NXNetwork.m` into your project directory
 3. Open your Xcode project and right-click in the Navigator
-4. Choose `Add files to "{AppName}..."
+4. Choose `Add files to {AppName}...`
 5. Select `NXNetwork.h` and `NXNetwork.m`. Make sure `.m` file is linked to your target.
 6. Add `#import 'NXNetwork.h'` in the relevent classes in your app
 
