@@ -94,12 +94,6 @@ static os_log_t nx_network_log;
 
 #pragma mark - Property Access Methods
 
-- (BOOL)isListening {
-    
-    return (BOOL)_reachability;
-    
-}
-
 - (NXNetworkReachabilityStatus)reachabilityStatus {
     
     NXNetworkReachabilityStatus rv = NXNetworkReachabilityStatusNotReachable;
@@ -235,17 +229,9 @@ static os_log_t nx_network_log;
     
 }
 
-- (BOOL)stopListening {
+- (void)stopListening {
     
-    if (_reachability) {
-        
-        SCNetworkReachabilityUnscheduleFromRunLoop(_reachability, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
-        
-        return YES;
-        
-    }
-    
-    return NO;
+    SCNetworkReachabilityUnscheduleFromRunLoop(_reachability, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     
 }
 

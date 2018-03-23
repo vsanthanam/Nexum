@@ -134,11 +134,6 @@ typedef void (^NXNetworkReachabilityStatusChangedHandler)(NXNetwork * _Nonnull n
 @property (NS_NONATOMIC_IOSONLY, copy, nullable) NXNetworkReachabilityStatusChangedHandler reachabilityStatusChangedHandler;
 
 /**
- The 'listening' status of the network object. If the network objet is listening for changes, notifications will be sent, blocks will be executed, and the delegate object will be informed when the network object's reachability status changes.
- */
-@property (NS_NONATOMIC_IOSONLY, readonly, getter=isListening) BOOL listening;
-
-/**
  Begin listening to changes in reachability
  
  @return YES if network object began listening, otherwise NO.
@@ -147,10 +142,8 @@ typedef void (^NXNetworkReachabilityStatusChangedHandler)(NXNetwork * _Nonnull n
 
 /**
  Stop listening to changes in reachability
- 
- @return YES if network object stopped listening, otherwose NO.
  */
-- (BOOL)stopListening;
+- (void)stopListening;
 
 /**
  @name Reachability Info
