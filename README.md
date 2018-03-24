@@ -10,6 +10,10 @@ Apple appears to have stopped updating their Reachability code. It isn't marked 
 
 Nexum is compiled with the iOS 11.2 SDK, but support iOS 9.x+
 
+## Download
+
+You can get the latest production ready release [here](https://github.com/vsanthanam/Nexum/releases/latest)
+
 ## Set Up
 
 Nexum is distributed as a static framework. Take a look at the [Project Setup guide](https://vsanthanam.github.io/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project and building the documentation locally.
