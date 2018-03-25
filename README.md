@@ -16,7 +16,7 @@ You can get the latest production ready release [here](https://github.com/vsanth
 
 ## Set Up
 
-Nexum is distributed as a static framework. Take a look at the [Project Setup guide](https://vsanthanam.github.io/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project and building the documentation locally.
+Take a look at the [Project Setup guide](https://vsanthanam.github.io/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project and building the documentation locally.
 
 ## Usage
 
