@@ -6,4 +6,4 @@
 //
 
 #import <Nexum/NXNetwork.h>
-#import <Nexum/NXNAddressInfo.h>
+#import <Nexum/NXAddressInfo.h>
