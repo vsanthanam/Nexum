@@ -10,13 +10,9 @@ Apple appears to have stopped updating their Reachability code. It isn't marked 
 
 Nexum is compiled with the iOS 11.2 SDK, but support iOS 9.x+
 
-## Download
-
-You can get the latest production ready release [here](https://github.com/vsanthanam/Nexum/releases/latest)
-
 ## Set Up
 
-Take a look at the [Project Setup guide](https://vsanthanam.github.io/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project and building the documentation locally.
+Take a look at the [Project Setup guide](https://code.vsanthanam.com/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project and building the documentation locally.
 
 ## Usage
 
@@ -24,10 +20,10 @@ Basic usage is pretty simple:
 1. Create and retain a reference to an instance of an `NXNetwork` object, or use the shared instance for basic projects.
 2. Observe changes in reachability using `NXNetworkDelegate`,  `NXNetworkReachabilityStatusChangedNotification`, or a block.
 
-See the  [Designing for Reachability](https://vsanthanam.github.io/Nexum/Documentation/designing-for-reachability.html) for a detailed primer on potential different implentations, and see [Example - Basic Reachability](https://vsanthanam.github.io/Nexum/Documentation/example---basic-reachability.html) for a quick start.
+See the  [Designing for Reachability](https://code.vsanthanam.com/Nexum/Documentation/designing-for-reachability.html) for a detailed primer on potential different implentations, and see [Example - Basic Reachability](https://code.vsanthanam.com/Nexum/Documentation/example---basic-reachability.html) for a quick start.
 
 ## Docs
 
-The full documentaion is available [here](https://vsanthanam.github.io/Nexum/Documentation/), hosted on GitHub Pages, but is also included as an xcode docset.
+The full documentaion is available [here](https://code.vsanthanam.com/Nexum/Documentation/), hosted on GitHub Pages, but is also included as an xcode docset.
 
 Documentation with made with [Jazzy](https://github.com/realm/jazzy) by [Realm](https://realm.io), using the [Jony Theme](https://github.com/HarshilShah/Jony) by [Harshil Shah](https://github.com/HarshilShah/)
