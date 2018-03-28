@@ -64,7 +64,7 @@
     
     freeifaddrs(interfaces);
     
-    if (address == nil || address.length <= 0) {
+    if (address.length <= 0) {
         
         return nil;
         
@@ -74,44 +74,60 @@
     
 }
 
-//NSString * address_for_interface(NSString * interface) {
-//    
-//    struct ifaddrs *ifa, *ifa_tmp;
-//    char addr[50];
-//    
-//    if (getifaddrs(&ifa) == -1) {
-//        
-//        perror("getifaddrs failed");
-//        
-//    }
-//    
-//    ifa_tmp = ifa;
-//    while (ifa_tmp) {
-//        
-//        if ((ifa_tmp->ifa_addr) && ((ifa_tmp->ifa_addr->sa_family == AF_INET) ||
-//                                    (ifa_tmp->ifa_addr->sa_family == AF_INET6))) {
-//            if (ifa_tmp->ifa_addr->sa_family == AF_INET) {
-//                
-//                struct sockaddr_in *in = (struct sockaddr_in*) ifa_tmp->ifa_addr;
-//                inet_ntop(AF_INET, &in->sin_addr, addr, sizeof(addr));
-//                
-//            } else {
-//                
-//                struct sockaddr_in6 *in6 = (struct sockaddr_in6*) ifa_tmp->ifa_addr;
-//                inet_ntop(AF_INET6, &in6->sin6_addr, addr, sizeof(addr));
-//            }
-//            printf("name = %s\n", ifa_tmp->ifa_name);
-//            printf("addr = %s\n", addr);
-//        }
-//        ifa_tmp = ifa_tmp->ifa_next;
-//    }
-//    
-//    return @"";
-//    
-//}
-//
-//- (void)test {
-//    
-//}
+- (NSString *)WLANIPv6Address {
+    
+    NSString *address;
+    
+    struct ifaddrs *interfaces;
+    struct ifaddrs *temp;
+    
+    int status = 0;
+    
+    status = getifaddrs(&interfaces);
+    
+    if (status == 0) {
+        
+        temp = interfaces;
+        
+        while (temp != NULL) {
+            
+            if (temp->ifa_addr->sa_family == AF_INET6) {
+                
+                if ([[NSString stringWithUTF8String:temp->ifa_name] isEqualToString:@"en0"]) {
+                    
+                    struct sockaddr_in6 *addr6 = (struct sockaddr_in6 *)temp->ifa_addr;
+                    char buf[INET6_ADDRSTRLEN];
+                    
+                    if (inet_ntop(AF_INET6, (void *)&(addr6->sin6_addr), buf, sizeof(buf)) == NULL) {
+                        
+                        address = nil;
+                        
+                    } else {
+                        
+                        address = [NSString stringWithUTF8String:buf];
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            temp = temp->ifa_next;
+            
+        }
+        
+    }
+    
+    freeifaddrs(interfaces);
+    
+    if (address.length <= 0) {
+        
+        return nil;
+        
+    }
+    
+    return address;
+    
+}
 
 @end
