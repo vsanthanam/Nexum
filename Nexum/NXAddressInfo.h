@@ -8,7 +8,7 @@
 @import Foundation;
 
 /**
- NXAddressInfo is a singleton class that lets you get IP address infomation about current connection(s)
+ NXAddressInfo is a singleton class that lets you get IP address infomation about current connection(s). NXAddress shouldn't instantiated directly.
  */
 @interface NXAddressInfo : NSObject
 

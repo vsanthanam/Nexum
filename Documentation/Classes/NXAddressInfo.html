@@ -51,7 +51,7 @@
 
                   </div>
                 </div>
-              <p>NXAddressInfo is a singleton class that lets you get IP address infomation about current connection(s)</p>
+              <p>NXAddressInfo is a singleton class that lets you get IP address infomation about current connection(s). NXAddress shouldn&rsquo;t instantiated directly.</p>
 
             </section>
             <section class="section task-group-section">
@@ -77,7 +77,8 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          
+                          <p>Get the shared address info object</p>
+
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
@@ -87,6 +88,10 @@
 
                           </div>
                         </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>The shared instance</p>
+                        </div>
                       </section>
                     </div>
                   </li>
@@ -94,10 +99,10 @@
               </div>
               <div class="task-group">
                 <div class="task-name-container">
-                  <a name="/Get%20Address%20Info"></a>
-                  <a name="//apple_ref/objc/Section/Get Address Info" class="dashAnchor"></a>
-                  <a href="#/Get%20Address%20Info">
-                    <h3 class="section-name">Get Address Info</h3>
+                  <a name="/Get%20WLAN%20Address%20Info"></a>
+                  <a name="//apple_ref/objc/Section/Get WLAN Address Info" class="dashAnchor"></a>
+                  <a href="#/Get%20WLAN%20Address%20Info">
+                    <h3 class="section-name">Get WLAN Address Info</h3>
                   </a>
                 </div>
                 <ul>
@@ -122,6 +127,98 @@
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
                             <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WLANIPv4Address</span><span class="p">;</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WLANIPv6Address"></a>
+                      <a name="//apple_ref/objc/Property/WLANIPv6Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WLANIPv6Address">WLANIPv6Address</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>IPv6 WLAN Address</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WLANIPv6Address</span><span class="p">;</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/Get%20WWAN%20Address%20Info"></a>
+                  <a name="//apple_ref/objc/Section/Get WWAN Address Info" class="dashAnchor"></a>
+                  <a href="#/Get%20WWAN%20Address%20Info">
+                    <h3 class="section-name">Get WWAN Address Info</h3>
+                  </a>
+                </div>
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WWANIPv4Address"></a>
+                      <a name="//apple_ref/objc/Property/WWANIPv4Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WWANIPv4Address">WWANIPv4Address</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>IPv4 WWAN Address</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WWANIPv4Address</span><span class="p">;</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WWANIPv6Address"></a>
+                      <a name="//apple_ref/objc/Property/WWANIPv6Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WWANIPv6Address">WWANIPv6Address</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>IPv6 WWAN Address</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WWANIPv6Address</span><span class="p">;</span></code></pre>
 
                           </div>
                         </div>
@@ -207,7 +304,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2018-03-25)</p>
+          <p>&copy; 2018 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2018-03-28)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
