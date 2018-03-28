@@ -38,6 +38,8 @@
 		072FCAE92061F7EC007F9030 /* NXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 072FCAE52061EF0B007F9030 /* NXNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		072FCAFA20620978007F9030 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAF920620978007F9030 /* CoreFoundation.framework */; };
 		072FCAFC2062097F007F9030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAFB2062097F007F9030 /* SystemConfiguration.framework */; };
+		07FFF01A20685C4000507AE3 /* NXAddressInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FFF01820685C4000507AE3 /* NXAddressInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07FFF01B20685C4000507AE3 /* NXAddressInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFF01920685C4000507AE3 /* NXAddressInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		076D7F7A2063F319004AC894 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		076D7F832063FA28004AC894 /* Designing For Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Designing For Reachability.md"; sourceTree = "<group>"; };
 		076D7F842063FADE004AC894 /* Project Setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Project Setup.md"; sourceTree = "<group>"; };
+		07FFF01820685C4000507AE3 /* NXAddressInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXAddressInfo.h; sourceTree = "<group>"; };
+		07FFF01920685C4000507AE3 /* NXAddressInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXAddressInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 				072FCADE2061EEF1007F9030 /* Nexum.h */,
 				072FCAE52061EF0B007F9030 /* NXNetwork.h */,
 				072FCAE62061EF0B007F9030 /* NXNetwork.m */,
+				07FFF01820685C4000507AE3 /* NXAddressInfo.h */,
+				07FFF01920685C4000507AE3 /* NXAddressInfo.m */,
 			);
 			path = Nexum;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072FCAE92061F7EC007F9030 /* NXNetwork.h in Headers */,
+				07FFF01A20685C4000507AE3 /* NXAddressInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FFF01B20685C4000507AE3 /* NXAddressInfo.m in Sources */,
 				072FCAE72061EF0B007F9030 /* NXNetwork.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

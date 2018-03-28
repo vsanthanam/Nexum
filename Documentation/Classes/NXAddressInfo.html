@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NXNetworkReachabilityStatus Enumeration Reference</title>
+    <title>NXAddressInfo Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/objc/Enum/NXNetworkReachabilityStatus" class="dashAnchor"></a>
-    <a title="NXNetworkReachabilityStatus Enumeration Reference"></a>
+    <a name="//apple_ref/objc/Class/NXAddressInfo" class="dashAnchor"></a>
+    <a title="NXAddressInfo Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -35,7 +35,7 @@
             <a href="../index.html">Nexum Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          NXNetworkReachabilityStatus Enumeration Reference
+          NXAddressInfo Class Reference
         </p>
       </div>
     </div>
@@ -44,31 +44,32 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>NXNetworkReachabilityStatus</h1>
+              <h1>NXAddressInfo</h1>
                 <div class="declaration">
                   <div class="language">
-                    <pre class="highlight objective_c"><code><span class="k">enum</span> <span class="n">NXNetworkReachabilityStatus</span> <span class="p">{}</span></code></pre>
+                    <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NXAddressInfo</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                   </div>
                 </div>
-              <p>An enumeration describing the various reachability statuses (statii?)</p>
-
-<ul>
-<li>NXNetworkReachabilityStatusNotReachable: The network object is not reachable</li>
-<li>NXNetworkReachabilityStatusReachableOverWLFi: The network object is reachable over WLAN</li>
-<li>NXNetworkReachabilityStatusReachableOverWWAN: The network object is reachable over WWAN</li>
-</ul>
+              <p>NXAddressInfo is a singleton class that lets you get IP address infomation about current connection(s). NXAddress shouldn&rsquo;t instantiated directly.</p>
 
             </section>
             <section class="section task-group-section">
               <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/Shared%20Instance"></a>
+                  <a name="//apple_ref/objc/Section/Shared Instance" class="dashAnchor"></a>
+                  <a href="#/Shared%20Instance">
+                    <h3 class="section-name">Shared Instance</h3>
+                  </a>
+                </div>
                 <ul>
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@E@NXNetworkReachabilityStatus@NXNetworkReachabilityStatusNotReachable"></a>
-                      <a name="//apple_ref/objc/Case/NXNetworkReachabilityStatusNotReachable" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@E@NXNetworkReachabilityStatus@NXNetworkReachabilityStatusNotReachable">NXNetworkReachabilityStatusNotReachable</a>
+                      <a name="/c:objc(cs)NXAddressInfo(cm)sharedAddressInfo"></a>
+                      <a name="//apple_ref/objc/Method/+sharedAddressInfo" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(cm)sharedAddressInfo">+sharedAddressInfo</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -76,14 +77,56 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The network object is not reachable</p>
+                          <p>Get the shared address info object</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="n">NXNetworkReachabilityStatusNotReachable</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sharedAddressInfo</span><span class="p">;</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>The shared instance</p>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/Get%20WLAN%20Address%20Info"></a>
+                  <a name="//apple_ref/objc/Section/Get WLAN Address Info" class="dashAnchor"></a>
+                  <a href="#/Get%20WLAN%20Address%20Info">
+                    <h3 class="section-name">Get WLAN Address Info</h3>
+                  </a>
+                </div>
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WLANIPv4Address"></a>
+                      <a name="//apple_ref/objc/Property/WLANIPv4Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WLANIPv4Address">WLANIPv4Address</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>IPv4 WLAN Address</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WLANIPv4Address</span><span class="p">;</span></code></pre>
 
                           </div>
                         </div>
@@ -93,9 +136,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@E@NXNetworkReachabilityStatus@NXNetworkReachabilityStatusReachableOverWiFi"></a>
-                      <a name="//apple_ref/objc/Case/NXNetworkReachabilityStatusReachableOverWiFi" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@E@NXNetworkReachabilityStatus@NXNetworkReachabilityStatusReachableOverWiFi">NXNetworkReachabilityStatusReachableOverWiFi</a>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WLANIPv6Address"></a>
+                      <a name="//apple_ref/objc/Property/WLANIPv6Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WLANIPv6Address">WLANIPv6Address</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -103,14 +146,52 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The network object is reachable over WiFi</p>
+                          <p>IPv6 WLAN Address</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="n">NXNetworkReachabilityStatusReachableOverWiFi</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WLANIPv6Address</span><span class="p">;</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <div class="task-name-container">
+                  <a name="/Get%20WWAN%20Address%20Info"></a>
+                  <a name="//apple_ref/objc/Section/Get WWAN Address Info" class="dashAnchor"></a>
+                  <a href="#/Get%20WWAN%20Address%20Info">
+                    <h3 class="section-name">Get WWAN Address Info</h3>
+                  </a>
+                </div>
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WWANIPv4Address"></a>
+                      <a name="//apple_ref/objc/Property/WWANIPv4Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WWANIPv4Address">WWANIPv4Address</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>IPv4 WWAN Address</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WWANIPv4Address</span><span class="p">;</span></code></pre>
 
                           </div>
                         </div>
@@ -120,9 +201,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:@E@NXNetworkReachabilityStatus@NXNetworkReachabilityStatusReachableOverWWAN"></a>
-                      <a name="//apple_ref/objc/Case/NXNetworkReachabilityStatusReachableOverWWAN" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@E@NXNetworkReachabilityStatus@NXNetworkReachabilityStatusReachableOverWWAN">NXNetworkReachabilityStatusReachableOverWWAN</a>
+                      <a name="/c:objc(cs)NXAddressInfo(py)WWANIPv6Address"></a>
+                      <a name="//apple_ref/objc/Property/WWANIPv6Address" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NXAddressInfo(py)WWANIPv6Address">WWANIPv6Address</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -130,14 +211,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The network object is reachable over WWAN</p>
+                          <p>IPv6 WWAN Address</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="n">NXNetworkReachabilityStatusReachableOverWWAN</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">WWANIPv6Address</span><span class="p">;</span></code></pre>
 
                           </div>
                         </div>
