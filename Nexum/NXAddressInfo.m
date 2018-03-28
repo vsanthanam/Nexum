@@ -32,6 +32,32 @@
 
 - (NSString *)WLANIPv4Address {
  
+    return [self _IPv4AddressForInterface:@"en0"];
+    
+}
+
+- (NSString *)WLANIPv6Address {
+    
+    return [self _IPv6AddressForInterface:@"en0"];
+    
+}
+
+- (NSString *)WWANIPv4Address {
+    
+    return [self _IPv4AddressForInterface:@"pdp_ip0"];
+    
+}
+
+- (NSString *)WWANIPv6Address {
+    
+    return [self _IPv4AddressForInterface:@"pdp_ip0"];
+    
+}
+
+#pragma mark - Private Instance Methods
+
+- (NSString *)_IPv4AddressForInterface:(NSString *)interface {
+    
     NSString *address;
     
     struct ifaddrs *interfaces;
@@ -49,7 +75,7 @@
             
             if (temp->ifa_addr->sa_family == AF_INET) {
                 
-                if ([[NSString stringWithUTF8String:temp->ifa_name] isEqualToString:@"en0"]) {
+                if ([[NSString stringWithUTF8String:temp->ifa_name] isEqualToString:interface]) {
                     
                     address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp->ifa_addr)->sin_addr)];
                     
@@ -74,7 +100,7 @@
     
 }
 
-- (NSString *)WLANIPv6Address {
+- (NSString *)_IPv6AddressForInterface:(NSString *)interface {
     
     NSString *address;
     
@@ -93,7 +119,7 @@
             
             if (temp->ifa_addr->sa_family == AF_INET6) {
                 
-                if ([[NSString stringWithUTF8String:temp->ifa_name] isEqualToString:@"en0"]) {
+                if ([[NSString stringWithUTF8String:temp->ifa_name] isEqualToString:interface]) {
                     
                     struct sockaddr_in6 *addr6 = (struct sockaddr_in6 *)temp->ifa_addr;
                     char buf[INET6_ADDRSTRLEN];

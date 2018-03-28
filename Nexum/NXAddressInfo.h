@@ -24,7 +24,7 @@
 + (nullable instancetype)sharedAddressInfo;
 
 /**
- @name Get Address Info
+ @name Get WLAN Address Info
  */
 
 /**
@@ -36,5 +36,19 @@
  IPv6 WLAN Address
  */
 @property (NS_NONATOMIC_IOSONLY, readonly, nullable) NSString *WLANIPv6Address;
+
+/**
+ @name Get WWAN Address Info
+ */
+
+/**
+ IPv4 WWAN Address
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, nullable) NSString *WWANIPv4Address;
+
+/**
+ IPv6 WWAN Address
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly, nullable) NSString *WWANIPv6Address;
 
 @end
