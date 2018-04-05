@@ -269,9 +269,9 @@ static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags
     
 }
 
-#pragma mark - C Utils
+#pragma mark - Internal C Utils
 
-NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
+static NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
     
     if ((flags & kSCNetworkReachabilityFlagsReachable) == 0) {
         
@@ -307,7 +307,7 @@ NXNetworkReachabilityStatus status_for_flags(SCNetworkReachabilityFlags flags) {
     
 }
 
-NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
+static NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
     
     return [NSString stringWithFormat:@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c",
             (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
@@ -321,6 +321,90 @@ NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
             (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
             (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-'];
     
+}
+
+#pragma mark - Public C Utils
+
+//const char * nx_string_from_sockaddr(const struct sockaddr *address) {
+//
+//    char *ipstring = NULL;
+//
+//    switch (address->sa_family) {
+//
+//        case AF_INET: {
+//
+//            NSLog(@"CASE INET");
+//            struct sockaddr_in *addr = (struct sockaddr_in *)address;
+//            ipstring = malloc(INET_ADDRSTRLEN);
+//            inet_ntop(AF_INET, &(addr->sin_addr), ipstring, INET_ADDRSTRLEN);
+//            break;
+//
+//
+//        }
+//
+//        case AF_INET6: {
+//
+//            NSLog(@"CASE INET6");
+//            struct sockaddr_in6 *addr = (struct sockaddr_in6 *)address;
+//            ipstring = malloc(INET6_ADDRSTRLEN);
+//            inet_ntop(AF_INET6, &(addr->sin6_addr), ipstring, INET6_ADDRSTRLEN);
+//            break;
+//
+//        }
+//
+//        default:
+//            NSLog(@"SOME OTHER CASE");
+//            break;
+//
+//    }
+//
+//    return ipstring;
+//
+//}
+
+NSString * nx_nsstring_from_sockaddr(const struct sockaddr *address) {
+    
+    if (address->sa_family == AF_INET) {
+        
+        char str[INET_ADDRSTRLEN];
+        struct sockaddr_in *addr_in = (struct sockaddr_in *)address;
+        inet_ntop(AF_INET, &(addr_in->sin_addr), str, INET_ADDRSTRLEN);
+        
+        return [NSString stringWithUTF8String:str];
+        
+    } else if (address->sa_family == AF_INET6) {
+        
+        char str[INET6_ADDRSTRLEN];
+        struct sockaddr_in6 *addr_in = (struct sockaddr_in6 *)address;
+        inet_ntop(AF_INET6, &(addr_in->sin6_addr), str, INET6_ADDRSTRLEN);
+        
+        return [NSString stringWithUTF8String:str];
+        
+    }
+    
+    return nil;
+    
+}
+
+const struct sockaddr * nx_sockaddr_from_ipv4_nsstring(NSString *addressString) {
+    
+    struct sockaddr_in addr_in;
+    inet_pton(AF_INET, [addressString UTF8String], &(addr_in.sin_addr));
+    struct sockaddr *addr = (struct sockaddr *)&addr_in;
+    addr->sa_family = AF_INET;
+    
+    return (const struct sockaddr *)addr;
+    
+}
+
+const struct sockaddr * nx_sockaddr_from_ipv6_nsstring(NSString *addressString) {
+    
+    struct sockaddr_in6 addr_in;
+    inet_pton(AF_INET6, [addressString UTF8String], &(addr_in.sin6_addr));
+    struct sockaddr *addr = (struct sockaddr *)&addr_in;
+    addr->sa_family = AF_INET6;
+    
+    return (const struct sockaddr *)addr;
 }
 
 @end

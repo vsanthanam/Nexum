@@ -40,6 +40,7 @@
 		072FCAFC2062097F007F9030 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCAFB2062097F007F9030 /* SystemConfiguration.framework */; };
 		0759FFB82074749D008F58BB /* NexumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0759FFB72074749D008F58BB /* NexumTests.m */; };
 		0759FFBA2074749D008F58BB /* libNexum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 072FCADB2061EEF1007F9030 /* libNexum.a */; };
+		07C98B0D2076918F00A4CC5B /* NXNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 072FCAE62061EF0B007F9030 /* NXNetwork.m */; };
 		07FFF01A20685C4000507AE3 /* NXAddressInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FFF01820685C4000507AE3 /* NXAddressInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07FFF01B20685C4000507AE3 /* NXAddressInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FFF01920685C4000507AE3 /* NXAddressInfo.m */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		076D7F7A2063F319004AC894 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		076D7F832063FA28004AC894 /* Designing For Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Designing For Reachability.md"; sourceTree = "<group>"; };
 		076D7F842063FADE004AC894 /* Project Setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Project Setup.md"; sourceTree = "<group>"; };
+		07C98B0C20768FAC00A4CC5B /* Sockaddr NSString Conversion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Sockaddr NSString Conversion.md"; sourceTree = "<group>"; };
 		07FFF01820685C4000507AE3 /* NXAddressInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXAddressInfo.h; sourceTree = "<group>"; };
 		07FFF01920685C4000507AE3 /* NXAddressInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXAddressInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +174,7 @@
 				076D7F7920634045004AC894 /* Example - Basic Reachability.md */,
 				076D7F832063FA28004AC894 /* Designing For Reachability.md */,
 				076D7F842063FADE004AC894 /* Project Setup.md */,
+				07C98B0C20768FAC00A4CC5B /* Sockaddr NSString Conversion.md */,
 			);
 			path = Guides;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C98B0D2076918F00A4CC5B /* NXNetwork.m in Sources */,
 				0759FFB82074749D008F58BB /* NexumTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

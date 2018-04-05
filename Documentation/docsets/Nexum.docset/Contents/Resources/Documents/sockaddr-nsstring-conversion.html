@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Guides  Reference</title>
+    <title>Sockaddr NSString Conversion  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Guides  Reference"></a>
+    <a title="Sockaddr NSString Conversion  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -34,7 +34,7 @@
             <a href="index.html">Nexum Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          Guides  Reference
+          Sockaddr NSString Conversion  Reference
         </p>
       </div>
     </div>
@@ -43,11 +43,32 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>Guides</h1>
-              <p>The following guides are available globally.</p>
+              
+              <h1 id='converting-between-nsstring-and-sockaddr' class='heading'>Converting Between NSString and sockaddr</h1>
+<h2 id='create-sockaddr-from-nsstring-ipv4' class='heading'>Create sockaddr from NSString (IPv4)</h2>
+<pre class="highlight plaintext"><code>// NSString containing IPv4 Address
+NSString *stringaddr = @"192.168.0.1";
 
-            </section>
-            <section class="section task-group-section">
+// Convert
+struct sockaddr *address = nx_sockaddr_from_ipv4_nsstring(stringaddr);
+</code></pre>
+<h2 id='create-sockaddr-from-nsstring-ipv4' class='heading'>Create sockaddr from NSString (IPv4)</h2>
+<pre class="highlight plaintext"><code>// NSString containing IPv6 Address
+NSString *stringaddr = @"2001:db8:8714:3a90::12";
+
+// Convert
+struct sockaddr *address = nx_sockaddr_from_ipv6_nsstring(stringaddr);
+</code></pre>
+<h2 id='get-nsstring-from-sockaddr-ipv4-or-ipv6' class='heading'>Get NSString from sockaddr (IPv4 or IPv6)</h2>
+<pre class="highlight plaintext"><code>// sockaddr(s) containing an IPv4 and an IPv6 adddress, respectively
+struct sockaddr *ipv4 = nx_sockaddr_from_ipv4_nsstring(@"192.168.0.1");
+struct sockaddr *ipb6 = nx_sockaddr_from_ipv6_nsstring(@"2001:db8:8714:3a90::12");
+
+// Convert
+NSString *ipv4string = nx_nsstring_from_sockaddr(ipv4);
+NSString *ipv6string = nx_nsstring_from_sockaddr(ipv6);
+</code></pre>
+
             </section>
           </section>
         </article>

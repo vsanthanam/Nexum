@@ -174,4 +174,32 @@ typedef void (^NXNetworkReachabilityStatusChangedHandler)(NXNetwork * _Nonnull n
  */
 @property (NS_NONATOMIC_IOSONLY, readonly, getter=isInterventionRequired) BOOL interventionRequired;
 
+/**
+ @name Utilities
+ */
+
+/**
+ Create an NSString from a sockaddr
+
+ @param address The sockaddr
+ @return The string
+ */
+NSString * nx_nsstring_from_sockaddr(const struct sockaddr *address);
+
+/**
+ Create a sockaddr from an IPv4 nsstring
+
+ @param addressString The string
+ @return The sockaddr
+ */
+const struct sockaddr * nx_sockaddr_from_ipv4_nsstring(NSString *addressString);
+
+/**
+ Create a sockaddr from an IPv6 nsstring
+ 
+ @param addressString The string
+ @return The sockaddr
+ */
+const struct sockaddr * nx_sockaddr_from_ipv6_nsstring(NSString *addressString);
+
 @end

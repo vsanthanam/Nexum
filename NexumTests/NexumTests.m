@@ -5,7 +5,10 @@
 //  Created by Varun Santhanam on 4/3/18.
 //
 
-#import <XCTest/XCTest.h>
+@import XCTest;
+@import Darwin.POSIX.arpa.inet;
+
+#import "NXNetwork.h"
 
 @interface NexumTests : XCTestCase
 
@@ -23,16 +26,24 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testConversionUtilsIPv4 {
+    
+    NSString *original = @"192.0.2.33";
+    const struct sockaddr *addr = nx_sockaddr_from_ipv4_nsstring(original);
+    NSString *converted = nx_nsstring_from_sockaddr(addr);
+    
+    XCTAssert([original isEqualToString:converted]);
+    
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testConversionUtilsIPv6 {
+    
+    NSString *original = @"2001:db8:8714:3a90::12";
+    const struct sockaddr *addr = nx_sockaddr_from_ipv6_nsstring(original);
+    NSString *converted = nx_nsstring_from_sockaddr(addr);
+    
+    XCTAssert([original isEqualToString:converted]);
+
 }
 
 @end

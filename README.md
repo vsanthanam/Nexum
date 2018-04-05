@@ -1,6 +1,6 @@
 # Nexum
 
-Updated Reachability for iOS Apps in Objective-C, based on Apple's [Reachability](https://developer.apple.com/library/content/samplecode/Reachability/Introduction/Intro.html).
+Updated Reachability for iOS Apps in Objective-C, based on Apple's [Reachability](https://developer.apple.com/library/content/samplecode/Reachability/Introduction/Intro.html), along with some other network utilities
 
 ## About
 
