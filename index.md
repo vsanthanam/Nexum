@@ -23,5 +23,5 @@ Nexum is a simple iOS framework that adds easy, drop-in reachability management 
 ## Contact Me
 
 * Take a look at [my website](https://www.vsanthanam.com)
-* Find me online [here](https://code.vsanthanam.com), at https://code.vsanthanam.com
+* Find me online [here](https://launchpad.vsanthanam.com), at http://launchpad.vsanthanam.com
 
