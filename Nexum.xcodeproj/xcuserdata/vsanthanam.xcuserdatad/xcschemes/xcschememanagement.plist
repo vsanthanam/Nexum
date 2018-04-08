@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Documentation.xcscheme</key>
+		<key>Documentation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Framework.xcscheme</key>
+		<key>Framework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Nexum.xcscheme</key>
+		<key>Nexum.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -28,6 +28,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>072FCADA2061EEF1007F9030</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>072FCAEC2061F996007F9030</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>072FCAF32061FD95007F9030</key>
 		<dict>
 			<key>primary</key>
 			<true/>
