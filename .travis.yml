@@ -1,5 +1,5 @@
 language: objective-c
-os: macos
+os: osx
 osx_image: xcode9.3beta
 script:
 - sudo gem install xcpretty
