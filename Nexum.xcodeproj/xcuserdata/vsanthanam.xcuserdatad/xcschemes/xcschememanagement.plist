@@ -7,7 +7,7 @@
 		<key>Documentation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Framework.xcscheme</key>
 		<dict>
@@ -17,16 +17,21 @@
 		<key>Nexum.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<key>NexumTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>072FCADA2061EEF1007F9030</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0759FFB42074749D008F58BB</key>
 		<dict>
 			<key>primary</key>
