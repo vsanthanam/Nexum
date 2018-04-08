@@ -1,7 +1,6 @@
 language: objective-c
 os: macos
-osx_image: xcode9.2
+osx_image: xcode9.3beta
 script:
-- xctool -project Nexum.xcodeproj -scheme Nexum run-tests -test-sdk iphonesimulator11.2
 - sudo gem install xcpretty
-- xcodebuild -project Nexum.xcodeproj -scheme Nexum -sdk iphoneos -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.3' test-without-building | xcpretty
+- xcodebuild -project Nexum.xcodeproj -scheme Nexum -sdk iphoneos -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.2' test-without-building | xcpretty
