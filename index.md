@@ -1,3 +1,7 @@
+---
+homepage: true
+description: simple, modern reachability for iOS apps in Objective-C
+---
 ## Features
 Nexum is a simple iOS framework that adds easy, drop-in reachability management support, along with other network utilities.
 
