@@ -4,7 +4,6 @@
 ![license](https://img.shields.io/github/license/vsanthanam/Nexum.svg)
 ![GitHub release](https://img.shields.io/github/release/vsanthanam/Nexum/all.svg)
 [![documentation](https://code.vsanthanam.com/Nexum/Documentation/badge.svg)](https://code.vsanthanam.com/Nexum/Documentation/)
-![GitHub last commit](https://img.shields.io/github/last-commit/vsanthanam/Nexum.svg)
 
 Updated Reachability for iOS Apps in Objective-C, based on Apple's [Reachability](https://developer.apple.com/library/content/samplecode/Reachability/Introduction/Intro.html), along with some other network utilities
 
