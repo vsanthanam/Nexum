@@ -1,7 +1,7 @@
 ---
-title: Code of Conduct
-layout: page
+title: Community Guidelines
 hide: true
+layout: page
 ---
 # Contributor Covenant Code of Conduct
 

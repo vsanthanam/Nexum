@@ -15,20 +15,22 @@ license:
 
 links:
     header:
-      - title: GitHub
-        url: https://www.github.com/vsanthanam/Nexum
       - title: Documentation
         url: https://code.vsanthanam.com/Nexum/Documentation/index.html
+      - title: GitHub
+        url: https://www.github.com/vsanthanam/Nexum
     footer:
       - title: GitHub
         url: https://www.github.com/vsanthanam/Nexum
       - title: Issues
         url: https://www.github.com/vsanthanam/Nexum/issues?state=open
+      - title: About Me
+        url: https://www.vsanthanam.com
 
 ui:
     header:
-        color1: "#0250c5"
-        color2: "#d43f8d"
+        color1: "#434343"
+        color2: "#020202"
         trianglify: true
 
 social:
