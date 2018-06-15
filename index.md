@@ -1,26 +1,61 @@
-## Features
-Nexum is a simple iOS framework that adds easy, drop-in reachability management support, along with other network utilities.
+---
+title: Get Started
+homepage: true
+description: simple, modern reachability for iOS apps in Objective-C
+layout: page
+navorder: 0
+---
+# Setup
 
-*  Get basic setup in just a few lines of code.
-*  Flexible class separation (delegation, blocks, notifications)
+Nexum is packaged as a **static framework**. Using the compiled static framework is the recommended setup option, but you can also use CocoaPods, or include the source code directly in your target.
 
-## About
-* Nexum is packaged as a static iOS framework, written in Objective-C
-* Nexum support iOS 9.0+,
-* Support for tvOS is in progress.
+## Static Framework
 
-## Download
-* You can clone the repo and build the framework & the documentation from the master branch. Some of this stuff maybe untested.
-* You can get the latest production ready release [here](https://github.com/vsanthanam/Nexum/releases/latest).
+1. Download the latest stable release [from GitHub](https://github.com/vsanthanam/Nexum/releases). It contains a compiled static framework as well as a copy of the relevent documentation.
+2. Add  `Nexum.framework`, and have your target link against the framework during the build process.
+3. Reference the library by importing the clang module in relevent files with `@import Nexum;`.
 
-## Get Started
-* Check out the README file, which inlcudes everything you'll need to get set up right away.
-* Full documentation is hosted on GitHub Pages, and is available [here](https://code.vsanthanam.com/Nexum/Documentation/), at https://code.vsanthanam.com/Nexum/Documentation/
+## CocoaPods
 
-## Contribute
-* See the [code of conduct](https://code.vsanthanam.com/Nexum/CODE_OF_CONDUCT).
+<div class="alert alert-info" markdown="1">
+ If you haven't already, download & install [Ruby](https://www.ruby-lang.org/en/) and [CocoaPods](https://cocoapods.org) on your machine.
+</div>
 
-## Contact Me
-* Take a look at [my website](https://www.vsanthanam.com)
-* Find me online [here](https://launchpad.vsanthanam.com), at https://launchpad.vsanthanam.com
+* If you're project isn't already configured to use CocoaPods, create a podfile & project workpsace by running:
 
+```
+$ pod init
+```
+
+* Add `pod 'Nexum', '~> 1.0'` to your podfile for the appropriate targets.
+
+* Install the depedency by running:
+
+```
+$ pod install
+```
+
+* Reference the library in the relevent files with `#import <Nexum/Nexum.h>`.
+
+More information about the pod is available [here](https://cocoapods.org/pods/Nexum).
+
+## Direct Source
+
+1. Clone the repository:
+
+```
+$ git clone https://github.com/vsanthanam/Nexum.git
+```
+
+2. Add `NXNetwork.h`, `NXNetwork.m`, `NXAddressInfo.h`, and `NXAddressInfo.m` to your project.
+3. Reference the library in the relevent files with `#import "VSAlertController.h"`. If you need the address conversion utilities, you'll also need to add `#import "NXAddressInfo.h"`
+
+<div class="alert alert-warning" markdown="1">
+**Warning:** Using the version of the code on the master branch isn't always production ready. Use one of the other two installation options for production ready releases.
+</div>
+
+Alternatively, you can build the `Framework` target for `Generic iOS Device` if you want to compile the static framework yourself. It's output can be found in `{Repo}/Release/Nexum.framework`.
+
+# Documentation & Examples
+
+***coming soon***
