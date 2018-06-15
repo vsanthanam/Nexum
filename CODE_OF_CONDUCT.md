@@ -1,5 +1,7 @@
 ---
 title: Code of Conduct
+layout: page
+hide: true
 ---
 # Contributor Covenant Code of Conduct
 

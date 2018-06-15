@@ -30,3 +30,22 @@ ui:
         color1: "#0250c5"
         color2: "#d43f8d"
         trianglify: true
+
+social:
+    github:
+        user: vsanthanam
+        repo: Nexum
+    twitter:
+        enabled: false
+        via:
+        hash:
+        account: 
+    facebook:
+        enabled: false
+        profileUrl:
+
+# Build settings
+markdown: kramdown
+exclude:
+    - Gemfile
+    - Gemfile.lock
