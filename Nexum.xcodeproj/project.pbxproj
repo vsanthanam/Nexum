@@ -83,13 +83,14 @@
 		072FCAEA2061F873007F9030 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		072FCAF920620978007F9030 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		072FCAFB2062097F007F9030 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		0747315F20D04C6A005DA95E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0747316020D04D26005DA95E /* Nexum.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Nexum.podspec; sourceTree = "<group>"; };
 		0759FFB52074749D008F58BB /* NexumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0759FFB72074749D008F58BB /* NexumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NexumTests.m; sourceTree = "<group>"; };
 		0759FFB92074749D008F58BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076D7F7920634045004AC894 /* Example - Basic Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Example - Basic Reachability.md"; sourceTree = "<group>"; };
 		076D7F7A2063F319004AC894 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		076D7F832063FA28004AC894 /* Designing For Reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Designing For Reachability.md"; sourceTree = "<group>"; };
-		076D7F842063FADE004AC894 /* Project Setup.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Project Setup.md"; sourceTree = "<group>"; };
 		07C98B0C20768FAC00A4CC5B /* Sockaddr NSString Conversion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Sockaddr NSString Conversion.md"; sourceTree = "<group>"; };
 		07FFF01820685C4000507AE3 /* NXAddressInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NXAddressInfo.h; sourceTree = "<group>"; };
 		07FFF01920685C4000507AE3 /* NXAddressInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NXAddressInfo.m; sourceTree = "<group>"; };
@@ -119,6 +120,8 @@
 		072FCAD02061EEE5007F9030 = {
 			isa = PBXGroup;
 			children = (
+				0747316020D04D26005DA95E /* Nexum.podspec */,
+				0747315F20D04C6A005DA95E /* .gitignore */,
 				076D7F7A2063F319004AC894 /* README.md */,
 				076D7F7820634005004AC894 /* Guides */,
 				072FCADD2061EEF1007F9030 /* Nexum */,
@@ -140,7 +143,7 @@
 		072FCADD2061EEF1007F9030 /* Nexum */ = {
 			isa = PBXGroup;
 			children = (
-				072FCAEA2061F873007F9030 /* module.modulemap */,
+				0747316320D04E9F005DA95E /* Supporting */,
 				072FCADE2061EEF1007F9030 /* Nexum.h */,
 				072FCAE52061EF0B007F9030 /* NXNetwork.h */,
 				072FCAE62061EF0B007F9030 /* NXNetwork.m */,
@@ -159,6 +162,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0747316320D04E9F005DA95E /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				072FCAEA2061F873007F9030 /* module.modulemap */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
 		0759FFB62074749D008F58BB /* NexumTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +184,6 @@
 			children = (
 				076D7F7920634045004AC894 /* Example - Basic Reachability.md */,
 				076D7F832063FA28004AC894 /* Designing For Reachability.md */,
-				076D7F842063FADE004AC894 /* Project Setup.md */,
 				07C98B0C20768FAC00A4CC5B /* Sockaddr NSString Conversion.md */,
 			);
 			path = Guides;
@@ -237,7 +247,7 @@
 		072FCAD12061EEE5007F9030 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				TargetAttributes = {
 					072FCADA2061EEF1007F9030 = {
 						CreatedOnToolsVersion = 9.2;
@@ -301,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nexport FRAMEWORK_LOCN=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework\"\n\n# Create Directory for Actual Headers Location for Version A\nmkdir -p \"${FRAMEWORK_LOCN}/Versions/A/Headers\"\n\n# Symbolically Link the Headers to their Parse Directory\nln -sfh A \"${FRAMEWORK_LOCN}/Versions/Current\"\nln -sfh Versions/Current/Headers \"${FRAMEWORK_LOCN}/Headers\"\nln -sfh \"Versions/Current/${PRODUCT_NAME}\" \\\n\"${FRAMEWORK_LOCN}/${PRODUCT_NAME}\"\n\n# Copy Public Headers Into Their Directory\ncp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \\\n\"${FRAMEWORK_LOCN}/Versions/A/Headers\"\n\n# Create Module Directory\nmkdir -p \"${FRAMEWORK_LOCN}/Modules\"\n\n# Copy Module Map\ncp -f \"${SRCROOT}/${PRODUCT_NAME}/module.modulemap\" \"${FRAMEWORK_LOCN}/Modules/\"";
+			shellScript = "set -e\nexport FRAMEWORK_LOCN=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework\"\n# Create the path to the real Headers die\nmkdir -p \"${FRAMEWORK_LOCN}/Versions/A/Headers\"\nmkdir -p \"${FRAMEWORK_LOCN}/Modules\"\n# Create the required symlinks\n/bin/ln -sfh A \"${FRAMEWORK_LOCN}/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${FRAMEWORK_LOCN}/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \\\n\"${FRAMEWORK_LOCN}/${PRODUCT_NAME}\"\n# Copy the public headers into the framework\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \\\n\"${FRAMEWORK_LOCN}/Versions/A/Headers\"";
 		};
 		072FCAF22061F99E007F9030 /* Multi Platform Bind */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -315,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set +u\n\nif [[ $SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SCRIPT_RUNNING=1\n\n# Environment Variables\nFRAMEWORK_NAME=${PROJECT_NAME}\nSTATIC_LIB=\"lib${PROJECT_NAME}.a\" # Product of other target\nFRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORK_NAME}.framework\" # Product of script in other target build phase\nOUTPUT_DIR=${PROJECT_DIR}/Release\n\n# Encapsulate Xcode Build Process\nfunction build_static_library_and_framework {\n    \n    xcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" \\\n    -target \"${PROJECT_NAME}\" \\\n    -configuration \"${CONFIGURATION}\" \\\n    -sdk \"${1}\" \\\n    ONLY_ACTIVE_ARCH=NO \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    OBJROOT=\"${OBJROOT}\" \\\n    BUILD_ROOT=\"${BUILD_ROOT}\" \\\n    SYMROOT=\"${SYMROOT}\" $ACTION\n    \n}\n\n# Encapsulate Lipo\nfunction merge_binaries {\n    \n    xcrun lipo -create \"${1}\" \"${2}\" -output \"${3}\"\n    \n}\n\n# 1 - Get SDK to determine platform (iphoneos or iphonesimulator)\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nSDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# 2 - Get Opposite Platform (iphonesimulator --> iphoneos, iphoneos --> iphonesimulator)\nif [ \"$SDK_PLATFORM\" == \"iphoneos\" ]; then\nOTHER_PLATFORM=iphonesimulator\nelse\nOTHER_PLATFORM=iphoneos\nfi\n\n# 3 - Get the build directories\nCURRENT_DIR=${BUILD_DIR}/${CONFIGURATION}-${SDK_PLATFORM}\nOTHER_DIR=${BUILD_DIR}/${CONFIGURATION}-${OTHER_PLATFORM}\n\n# 4 - Build Opposite Platform\nbuild_static_library_and_framework \"${OTHER_PLATFORM}\"\n\n# 5 - Copy Framework Structure\nrm -rf \"${OUTPUT_DIR}\"\nmkdir -p \"${OUTPUT_DIR}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-${SDK_PLATFORM}/${PROJECT_NAME}.framework\" \"${OUTPUT_DIR}/${PROJECT_NAME}.framework\"\n\n# 6 - Merge Into /Release\nmerge_binaries \"${CURRENT_DIR}/${STATIC_LIB}\" \"${OTHER_DIR}/${STATIC_LIB}\" \"${OUTPUT_DIR}/${PROJECT_NAME}.framework/${PROJECT_NAME}\"";
+			shellScript = "set -e\n# If we're already inside this script then die\nif [ -n \"$MULTIPLATFORM_BUILD_IN_PROGRESS\" ]; then\nexit 0\nfi\nexport MULTIPLATFORM_BUILD_IN_PROGRESS=1\nFRAMEWORK_NAME=\"Nexum\"\nINPUT_STATIC_LIB=\"lib${FRAMEWORK_NAME}.a\"\nFRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORK_NAME}.framework\"\nfunction build_static_library {\n    # Will rebuild the static library as specified\n    #     build_static_library sdk\n    xcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" \\\n    -target \"${TARGET_NAME}\" \\\n    -configuration \"${CONFIGURATION}\" \\\n    -sdk \"${1}\" \\\n    ONLY_ACTIVE_ARCH=NO \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    OBJROOT=\"${OBJROOT}\" \\\n    BUILD_ROOT=\"${BUILD_ROOT}\" \\\n    SYMROOT=\"${SYMROOT}\" $ACTION\n}\nfunction make_fat_library {\n    # Will smash 2 static libs together\n    #     make_fat_library in1 in2 out\n    xcrun lipo -create \"${1}\" \"${2}\" -output \"${3}\"\n}\n# 1 - Extract the platform (iphoneos/iphonesimulator) from the SDK name\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nSDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n# 2 - Extract the version from the SDK\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]; then\nSDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n# 3 - Determine the other platform\nif [ \"$SDK_PLATFORM\" == \"iphoneos\" ]; then\nOTHER_PLATFORM=iphonesimulator\nelse\nOTHER_PLATFORM=iphoneos\nfi\n# 4 - Find the build directory\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SDK_PLATFORM$ ]]; then\nOTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${OTHER_PLATFORM}\"\nelse\necho \"Could not find other platform build directory.\"\nexit 1\nfi\n# Build the other platform.\nbuild_static_library \"${OTHER_PLATFORM}${SDK_VERSION}\"\n# If we're currently building for iphonesimulator, then need to rebuild\n#   to ensure that we get both i386 and x86_64\nif [ \"$SDK_PLATFORM\" == \"iphonesimulator\" ]; then\nbuild_static_library \"${SDK_NAME}\"\nfi\n# Join the 2 static libs into 1 and push into the .framework\nmake_fat_library \"${BUILT_PRODUCTS_DIR}/${INPUT_STATIC_LIB}\" \\\n\"${OTHER_BUILT_PRODUCTS_DIR}/${INPUT_STATIC_LIB}\" \\\n\"${FRAMEWORK_LOCATION}/Versions/A/${FRAMEWORK_NAME}\"\n# Ensure that the framework is present in both platform's build directories\ncp -a \"${FRAMEWORK_LOCATION}/Versions/A/${FRAMEWORK_NAME}\" \\\n\"${OTHER_BUILT_PRODUCTS_DIR}/${FRAMEWORK_NAME}.framework/Versions/A/${FRAMEWORK_NAME}\"\n# Copy the framework to the user's desktop\nditto \"${FRAMEWORK_LOCATION}\" \"${PROJECT_DIR}/Release/${FRAMEWORK_NAME}.framework\"\nditto \"${PROJECT_DIR}/${FRAMEWORK_NAME}/Supporting/module.modulemap\" \"${PROJECT_DIR}/Release/${FRAMEWORK_NAME}.framework/Modules\"";
 		};
 		072FCAF72061FDC4007F9030 /* Build Documentation w/ Jazzy */ = {
 			isa = PBXShellScriptBuildPhase;

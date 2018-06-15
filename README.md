@@ -1,35 +1,27 @@
 # Nexum
 
-![language](https://img.shields.io/badge/language-Objective--C-blue.svg)
-![license](https://img.shields.io/github/license/vsanthanam/Nexum.svg)
-![GitHub release](https://img.shields.io/github/release/vsanthanam/Nexum/all.svg)
+[![language](https://img.shields.io/badge/language-Objective--C-blue.svg)](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[![license](https://img.shields.io/github/license/vsanthanam/nexum.svg)](https://en.wikipedia.org/wiki/MIT_License)
+[![GitHub (pre-)release](https://img.shields.io/github/release/vsanthanam/nexum/all.svg)](https://github.com/vsanthanam/Nexum/releases)
 [![documentation](https://code.vsanthanam.com/Nexum/Documentation/badge.svg)](https://code.vsanthanam.com/Nexum/Documentation/)
-![GitHub last commit](https://img.shields.io/github/last-commit/vsanthanam/Nexum.svg)
-
-Updated Reachability for iOS Apps in Objective-C, based on Apple's [Reachability](https://developer.apple.com/library/content/samplecode/Reachability/Introduction/Intro.html), along with some other network utilities
-
-## About
+[![CocoaPods](https://img.shields.io/cocoapods/v/Nexum.svg)](https://cocoapods.org/pods/VSAlert)
+![CocoaPods](https://img.shields.io/cocoapods/p/Nexum.svg)
 
 Apple appears to have stopped updating their Reachability code. It isn't marked up with nullability for use with Swift projects, it doesn't use ARC, and is generally inflexible. Nexum is a drop-in replacement for Apple's reachability that is still extremely similar and very simple, but designed for easy, drop-in use and more design flexibility. Not everyone wants to use NSNotification all the time :P
 
-## Requirements
+## Setup
 
-Nexum is compiled with the iOS 11.2 SDK, but support iOS 9.x+
+For a quick start guide, see the [project website](https://nexum.vsanthanam.com).
+The website is hosted on [GitHub Pages](https://pages.github.com), and is built using [Jekyll](https://jekyllrb.com) and [jekyll-docs-theme](https://github.com/vsanthanam/jekyll-docs-theme).
 
-## Set Up
+## Documentation
 
-Take a look at the [Project Setup guide](https://code.vsanthanam.com/Nexum/Documentation/project-setup.html) for detailed step by step instruction on setting up your project and building the documentation locally.
+Full documentation is available on the [project website](https://code.vsanthanam.com/Nexum/Documentation/index.html). Documentation is generated with [JazzyDoc](https://github.com/realm/jazzy), and styled using [Jony](https://github.com/HarshilShah/Jony).  The hosted documentation is applicable for the latest version found under 'releases'.
 
-## Usage
+## Contribution Guidelines
 
-Basic usage is pretty simple:
-1. Create and retain a reference to an instance of an `NXNetwork` object, or use the shared instance for basic projects.
-2. Observe changes in reachability using `NXNetworkDelegate`,  `NXNetworkReachabilityStatusChangedNotification`, or a block.
+See the [contribution guidelines](https://code.vsanthanam.com/Nexum/CONTRIBUTING.html) before contributing to the project.
 
-See the  [Designing for Reachability](https://code.vsanthanam.com/Nexum/Documentation/designing-for-reachability.html) for a detailed primer on potential different implentations, and see [Example - Basic Reachability](https://code.vsanthanam.com/Nexum/Documentation/example---basic-reachability.html) for a quick start.
+## Community Guidelines
 
-## Docs
-
-The full documentaion is available [here](https://code.vsanthanam.com/Nexum/Documentation/), hosted on GitHub Pages, but is also included as an xcode docset.
-
-Documentation with made with [Jazzy](https://github.com/realm/jazzy) by [Realm](https://realm.io), using the [Jony Theme](https://github.com/HarshilShah/Jony) by [Harshil Shah](https://github.com/HarshilShah/)
+See the [code of conduct](https://code.vsanthanam.com/Nexum/CODE_OF_CONDUCT.html) for detailed participation rules. Please report all violations to [talkto@vsanthanam.com](mailto:talkto@vsanthanam.com)
