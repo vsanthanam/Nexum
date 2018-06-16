@@ -325,43 +325,6 @@ static NSString * string_from_flags(SCNetworkReachabilityFlags flags) {
 
 #pragma mark - Public C Utils
 
-//const char * nx_string_from_sockaddr(const struct sockaddr *address) {
-//
-//    char *ipstring = NULL;
-//
-//    switch (address->sa_family) {
-//
-//        case AF_INET: {
-//
-//            NSLog(@"CASE INET");
-//            struct sockaddr_in *addr = (struct sockaddr_in *)address;
-//            ipstring = malloc(INET_ADDRSTRLEN);
-//            inet_ntop(AF_INET, &(addr->sin_addr), ipstring, INET_ADDRSTRLEN);
-//            break;
-//
-//
-//        }
-//
-//        case AF_INET6: {
-//
-//            NSLog(@"CASE INET6");
-//            struct sockaddr_in6 *addr = (struct sockaddr_in6 *)address;
-//            ipstring = malloc(INET6_ADDRSTRLEN);
-//            inet_ntop(AF_INET6, &(addr->sin6_addr), ipstring, INET6_ADDRSTRLEN);
-//            break;
-//
-//        }
-//
-//        default:
-//            NSLog(@"SOME OTHER CASE");
-//            break;
-//
-//    }
-//
-//    return ipstring;
-//
-//}
-
 NSString * nx_nsstring_from_sockaddr(const struct sockaddr *address) {
     
     if (address->sa_family == AF_INET) {
