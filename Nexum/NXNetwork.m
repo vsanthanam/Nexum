@@ -6,7 +6,6 @@
 //
 
 @import CoreFoundation;
-@import os.log;
 @import Darwin.POSIX.arpa.inet;
 
 #import "NXNetwork.h"
@@ -24,16 +23,6 @@ NSString * const NXNetworkReachabilityStatusChanged = @"kNXNetworkReachabilitySt
 
 @synthesize delegate = _delegate;
 @synthesize reachabilityStatusChangedHandler = _reachabilityStatusChangedHandler;
-
-static os_log_t nx_network_log;
-
-#pragma mark - Overridden Instance Methods
-
-+ (void)initialize {
-    
-    nx_network_log = os_log_create(log_subsystem, log_category);
-    
-}
 
 #pragma mark - Public Class Methods
 
@@ -259,10 +248,6 @@ static os_log_t nx_network_log;
 #pragma mark - C Functions
 
 static void callback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void * info) {
-
-//#ifdef DEBUG
-//    os_log_info(nx_network_log, "%@", string_from_flags(flags));
-//#endif
     
     NXNetwork *network = (__bridge NXNetwork *)info;
     [network _reachabilityStatusChanged];
